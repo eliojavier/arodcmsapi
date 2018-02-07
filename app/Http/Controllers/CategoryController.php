@@ -10,9 +10,21 @@ class CategoryController extends Controller
 
     public function index()
     {
+        $categories = Category::all();
+
+        return response()->json(['categories' => $categories]);
+    }
+
+    public function getActiveCategories()
+    {
         $categories = Category::active()->get();
 
         return response()->json(['categories' => $categories]);
+    }
+
+    public function show(Category $category)
+    {
+        return response()->json(['category' => $category]);
     }
 
 
@@ -37,6 +49,7 @@ class CategoryController extends Controller
     public function updateStatus(Category $category)
     {
         $category->status = $category->status == 'active' ? 'inactive' : 'active';
+//        $category->status = 'inactive';
         $category->update();
 
         return response()->json(['success' => 'category updated']);

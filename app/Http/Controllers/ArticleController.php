@@ -15,7 +15,7 @@ class ArticleController extends Controller
         if ($exists = $user->roles->contains('name', 'superadmin') ||
             $exists = $user->roles->contains('name', 'editor')) {
 
-            $articles = Article::all();
+            $articles = Article::active()->get();
             return response()->json(['articles' => $articles]);
         } else if ($exists = $user->roles->contains('name', 'writer')) {
             return response()->json(['articles' => $user->articles]);
@@ -40,7 +40,7 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        return response()->json(['article' => $article]);
+        return response()->json(['article' => $article->load('categories')]);
     }
 
     public function update(Request $request, Article $article)

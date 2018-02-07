@@ -21,27 +21,35 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'isSuperAdmin']]
     Route::post('users', 'UserController@store');
     Route::get('users/{user}', 'UserController@show');
     Route::put('users/{user}', 'UserController@update');
-    Route::put('users/{user}/status', 'UserController@updateStatus');
+    Route::delete('users/{user}', 'UserController@updateStatus');
 
     //ARTICLE CONTROLLER
-    Route::get('users/articles', 'ArticleController@index');
-    Route::get('users/articles/{article}', 'ArticleController@show');
-});
-
-Route::group(['middleware' => ['auth:api']], function () {
-    //ARTICLE CONTROLLER
-    Route::get('articles', 'ArticleController@index')->middleware('canSeeMyArticles');
-    Route::put('articles', 'ArticleController@update')->middleware('canEditArticle');
-    Route::post('articles', 'ArticleController@store')->middleware('canWriteArticle');
-    Route::post('articles', 'ArticleController@store');
-    Route::get('articles/{article}', 'ArticleController@show')->middleware('canSeeArticle');
+    Route::get('articles', 'ArticleController@index');
+    Route::get('articles/{article}', 'ArticleController@show');
 
     //CATEGORY CONTROLLER
     Route::get('categories', 'CategoryController@index');
+    Route::get('categories/active', 'CategoryController@getActiveCategories');
     Route::post('categories', 'CategoryController@store');
     Route::put('categories/{category}', 'CategoryController@update');
-    Route::put('categories/{category}/status', 'CategoryController@updateStatus');
+    Route::delete('categories/{category}', 'CategoryController@updateStatus');
+    Route::get('categories/{category}', 'CategoryController@show');
+});
 
+Route::group(['middleware' => ['auth:api']], function () {
+    //USER CONTROLLER
+    Route::get('users/info', 'UserController@showUserInfo');
+
+    //ARTICLE CONTROLLER
+    Route::get('articles', 'ArticleController@index')->middleware('canSeeMyArticles');
+    Route::put('articles/{article}', 'ArticleController@update')->middleware('canEditArticle');
+    Route::post('articles', 'ArticleController@store')->middleware('canWriteArticle');
+//    Route::post('articles', 'ArticleController@store');
+    Route::get('articles/{article}', 'ArticleController@show')->middleware('canSeeArticle');
+    Route::delete('articles/{article}', 'ArticleController@updateStatus');
+
+    //CATEGORY CONTROLLER
+    Route::get('categories', 'CategoryController@index');
 });
 
 

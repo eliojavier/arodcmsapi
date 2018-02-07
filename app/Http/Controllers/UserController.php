@@ -68,4 +68,11 @@ class UserController extends Controller
         return response()->json(['error' => 'wrong credentials'])
             ->setStatusCode(401);
     }
+
+    public function showUserInfo(Request $request)
+    {
+        $user = User::findUserByToken($request->user()->id);
+
+        return response()->json(['user' => $user->name]);
+    }
 }
