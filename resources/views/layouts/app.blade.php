@@ -8,7 +8,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', 'Shopware Agentur, Tutorials, Online Kurse & Hosting')</title>
+    <meta name="description" content="@yield('meta-description', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="og:title" content="@yield('og-title', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="og:type" content="@yield('og-type', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="og:url" content="@yield('og-url', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="og:image" content="@yield('og-image', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="article:published_time" content="@yield('article-published_time', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="article:modified_time" content="@yield('article-modified_time', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="article:tag" content="@yield('article-tag', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta property="article:author" content="@yield('article-author', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')" />
+    <meta name="keywords" content="@yield('keywords', 'Shopware')" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
