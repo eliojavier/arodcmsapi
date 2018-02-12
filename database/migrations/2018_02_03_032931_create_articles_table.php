@@ -16,8 +16,12 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->unique();
+            $table->string('permalink')->unique()->nullable();
             $table->longText('body');
             $table->string('img_url')->nullable();
+            $table->string('seo_title')->nullable();
+            $table->longText('seo_description')->nullable();
+            $table->longText('keywords')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->enum('visibility', ['public', 'private'])->default('public');
             $table->unsignedInteger('user_id');

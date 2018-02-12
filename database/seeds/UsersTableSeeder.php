@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => 'SEO Editor',
-                'email' => 'seod@gmail.com',
+                'email' => 'seoeditor@gmail.com',
                 'password' => bcrypt(123456)
             ],
             [

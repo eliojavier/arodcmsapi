@@ -6,6 +6,9 @@ $factory->define(App\Article::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'body' => $faker->paragraph(5),
+        'img_url' => $faker->imageUrl(),
+        'seo_description' => $faker->sentence,
+        'keywords' => $faker->word . ', ' . $faker->word . ', ' . $faker->word,
         'user_id' => $faker->numberBetween(3, 17)
     ];
 });

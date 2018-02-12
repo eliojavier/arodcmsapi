@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::post('users/login', 'UserController@login');
+Route::get('articles/permalink/{permalink}', 'ArticleController@getByPermalink');
+//Route::get('articles/permalink/p', 'ArticleController@getByPermalinkTest');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'isSuperAdmin']], function () {
     //USER CONTROLLER
@@ -44,7 +46,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('articles', 'ArticleController@index')->middleware('canSeeMyArticles');
     Route::put('articles/{article}', 'ArticleController@update')->middleware('canEditArticle');
     Route::post('articles', 'ArticleController@store')->middleware('canWriteArticle');
-//    Route::post('articles', 'ArticleController@store');
+    Route::post('articles/{article}/image', 'ArticleController@storeImage');
     Route::get('articles/{article}', 'ArticleController@show')->middleware('canSeeArticle');
     Route::delete('articles/{article}', 'ArticleController@updateStatus');
 
