@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $article->title)
+@section('title', $article->seo_title)
 @section('meta-description',$article->seo_description)
 @section('og-title', $article->seo_title)
 @section('og-type', 'article')
@@ -26,10 +26,12 @@
                                         <div class="blog-title">
                                             <i class="fa fa-user"></i>
                                             <h1>{{$article->title}}</h1>
-                                            <p>Publicado por <a href="#" class="blog-admin">{{$article->user->name}}</a> en <span class="blog-date">{{$article->created_at}}</span></p>
+                                            <p>Publicado por <a href="#" class="blog-admin">{{$article->user->name}}</a>
+                                                en <span class="blog-date">{{$article->created_at}}</span></p>
                                         </div>
                                         <figure>
-                                            <a href="blog-single.html"><img style="height: 500px; object-fit: contain" alt="img" src="{{$article->img_url}}"></a>
+                                            <a><img style="height: 500px; object-fit: contain"
+                                                                            alt="{{$article->seo_title}}" src="{{$article->img_url}}"></a>
                                         </figure>
                                         {{--<div class="blog-details-content" innerHTML="{{$article->body}}">--}}
                                         <div class="blog-details-content">
