@@ -21,6 +21,7 @@ class PagesController extends Controller
                                             $query->active()->latest()->take(5);
                                         }])->get());
         }
-        return response()->json(['categories' => $articles]);
+//        return response()->json(['categories' => $articles]);
+        return view('welcome', ['categories' => $articles]);
     }
 }
