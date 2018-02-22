@@ -297,6 +297,12 @@ Author URI : http://www.markups.io/
 .blog-title h2 {
   font-size: 21px!important;
 }
+
+@media (max-width: 500px){
+  .container {
+    width:100%!important;
+  }
+}
 /*=======================================
 Template Design By MarkUps.
 Author URI : http://www.markups.io/
@@ -5908,7 +5914,8 @@ img{
 	margin-bottom: 35px;
 }
 .blog-archive .single-from-blog figure img {
-	height: 400px;  
+  /* height: 400px; */
+  margin: 25px 0px;
 }
 .blog-left{
 	display: inline;
