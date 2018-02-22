@@ -104,19 +104,14 @@
                                 <figure>
                                     <a href="{{url('articles/' . $category->articles[0]->permalink)}}"><img
                                                 src="{{$category->articles[0]->img_url}}"
-                                                alt="img"></a>
+                                                alt="{{$category->articles[0]->img_name}}"></a>
                                 </figure>
                                 <div class="blog-title">
                                     <h2>
                                         <a href="{{url('articles/' . $category->articles[0]->permalink)}}">{{$category->articles[0]->title}}</a>
                                     </h2>
                                 </div>
-                                <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 90)!!}...</p>
-                                <div style="text-align: center!important;">
-                                    <a href="{{url('articles/' . $category->articles[0]->permalink)}}"
-                                       class="button button-default read-more"
-                                       data-text="Leer más"><span>Leer más</span></a>
-                                </div>
+                                <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}...</p>
                             </article>
                             @for ($i = 1; $i <= 4; $i++)
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -124,18 +119,23 @@
                                         <a href="{{url('articles/' . $category->articles[$i]->permalink)}}"><img
                                                     style="width: 100%"
                                                     src="{{$category->articles[$i]->img_url}}"
-                                                    alt="img"></a>
+                                                    alt="{{$category->articles[$i]->img_url}}"></a>
                                     </figure>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                     <div class="blog-title">
-                                        <h4 style="margin: 0">
+                                        <h4 style="margin: 0; font-size: 15px;font-weight: bold">
                                             <a href="{{url('articles/' . $category->articles[$i]->permalink)}}">{{$category->articles[$i]->title}}</a>
                                         </h4>
                                     </div>
                                     <p>{!!substr(html_entity_decode($category->articles[$i]->body), 0, 90)!!}...</p>
                                 </div>
                             @endfor
+                                <div style="text-align: center!important;">
+                                    <a href="{{url('articles/' . $category->articles[0]->permalink)}}"
+                                       class="button button-default read-more"
+                                       data-text="Leer más"><span>Leer más</span></a>
+                                </div>
                             </div>
 
                         @endforeach
