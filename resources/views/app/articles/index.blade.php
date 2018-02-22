@@ -62,7 +62,9 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                 <aside class="blog-right">
-
+                                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
+                                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
+                                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
                                 </aside>
                             </div>
                         </div>

@@ -77,28 +77,47 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
-                    <div class="welcome-area">
-                        <div class="title-area">
-                            <h2 class="tittle">Bienvenidos a <span>Mi Blog</span></h2>
-                            <span class="tittle-line"></span>
-                            <p style="text-align: justify">Gracias por visitar nuestro sitio web Mi Nuevo Credito. Este
-                                blog es para usted si desea
-                                aprender cómo mejorar su puntuación de crédito, reparar su reporte de crédito, elevar su
-                                puntaje de crédito, y obtener tarjetas de crédito y préstamos para lograr el sueño
-                                Americano. También enseñamos sobre la dos industrias estafadoras como consolidación de
-                                deudas y la liquidación de la deudas. Básicamente se le enseñara a correr asi a las
-                                colinas si no desea ser engañados por empresas en esas dos industrias.</p>
-                            <p style="text-align: justify">Si necesita ayuda con Reparación de Crédito, Prestamos Para
-                                Consolidación de Deudas o
-                                consejos sobre cómo elevar su puntaje de crédito, por favor póngase en contacto con el
-                                consejero de crédito Alonso Rodríguez a través de http://www.alonsorodriguez.org/ o el
-                                número 1-877-373-9043.</p>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="col-md-6">
+                        <h3>Noticias</h3>
+                        <article class="single-from-blog">
+                            <figure>
+                                <a href="{{url('articles/' . $articles[4]->permalink)}}"><img
+                                            src="{{$articles[4]->img_url}}"
+                                            alt="img"></a>
+                            </figure>
+                            <div class="blog-title">
+                                <h2>
+                                    <a href="{{url('articles/' . $articles[4]->permalink)}}">{{$articles[4]->title}}</a>
+                                </h2>
+                            </div>
+                            <p>{!!substr(html_entity_decode($articles[4]->body), 0, 90)!!}...</p>
+                            <div style="text-align: center!important;">
+                                <a href="{{url('articles/' . $articles[4]->permalink)}}"
+                                   class="button button-default read-more" data-text="Leer más"><span>Leer más</span></a>
+                            </div>
+                        </article>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <figure>
+                                <a href="{{url('articles/' . $articles[4]->permalink)}}"><img style="width: 100%"
+                                            src="{{$articles[4]->img_url}}"
+                                            alt="img"></a>
+                            </figure>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                            <div class="blog-title">
+                                <h4 style="margin: 0">
+                                    <a href="{{url('articles/' . $articles[4]->permalink)}}">{{$articles[4]->title}}</a>
+                                </h4>
+                            </div>
+                            <p>{!!substr(html_entity_decode($articles[4]->body), 0, 90)!!}...</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <img style="width: 100%; margin:15px" src="{{asset('images/banner.png')}}" alt="banner">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
+                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
+                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
                 </div>
             </div>
         </div>
@@ -108,13 +127,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="from-blog-area">
-                    {{--<div class="title-area">--}}
-                    {{--<h2 class="tittle">Our blog</h2>--}}
-                    {{--<span class="tittle-line"></span>--}}
-                    {{--<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id--}}
-                    {{--quod maxime placeat facere possimus, omnis voluptas assumenda est</p>--}}
-                    {{--</div>--}}
-                    <!-- From Blog content -->
                         <div class="from-blog-content">
                             <div class="row">
                                 <div class="col-md-4">
