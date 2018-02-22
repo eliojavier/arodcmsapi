@@ -32,7 +32,7 @@ class ArticleController extends Controller
 
         $article = new Article();
         $article->title = $request->title;
-        $article->permalink = $request->permalink;
+        $article->permalink = $request->permalink != null ? $request->permalink : str_slug($request->title);
         $article->body = $request->body;
         $article->seo_title = $request->seo_title;
         $article->seo_description = $request->seo_description;
@@ -65,9 +65,10 @@ class ArticleController extends Controller
             $file = $request->image;
             $base_path = 'images/articles';
             $server_path = 'http://' . $_SERVER['HTTP_HOST'] . '/';
-            $filename = strtolower(date('Y-m-d-h-i-s') . "."
-                . sha1($file->getClientOriginalName()) . "."
-                . $file->getClientOriginalExtension());
+//            $filename = strtolower(date('Y-m-d-h-i-s') . "."
+//                . sha1($file->getClientOriginalName()) . "."
+//                . $file->getClientOriginalExtension());
+            $filename = $file->getClientOriginalName();
             $file->move($base_path, $filename);
 
             $article->img_url = strtolower($server_path . $base_path . "/" . $filename);
