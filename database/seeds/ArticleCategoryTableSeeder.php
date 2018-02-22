@@ -15,7 +15,7 @@ class ArticleCategoryTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         $articles = Article::all();
         foreach ($articles as $article){
-            $article->categories()->attach([$faker->numberBetween($min = 1, $max = 6), $faker->numberBetween($min = 1, $max = 8), $faker->numberBetween($min = 1, $max = 8)]);
+            $article->categories()->attach([$faker->numberBetween($min = 1, $max = 6)]);
         }
     }
 }

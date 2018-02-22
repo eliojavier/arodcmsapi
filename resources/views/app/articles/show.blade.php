@@ -39,6 +39,15 @@
                                         </div>
                                         <p>Categoría: {{$article->categories[0]->name}}</p>
                                     </article>
+
+                                Relacionados:
+                                    <br>
+                                @foreach($related_articles->articles as $related_article)
+                                    <b>{{$related_article->title}}</b>
+                                    {{$related_article->img_url}}
+                                    {{$related_article->id}}
+                                        <br>
+                                @endforeach
                                     <!--<div class="blog-comment">-->
                                     <!--<h2>Post a comment</h2>-->
                                     <!--<form class="comment-form" action="">-->
@@ -155,5 +164,6 @@
         </div>
     </section>
     <!-- End blog section -->
+
 
 @endsection

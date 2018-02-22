@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+    {{--@foreach($header_categories as $header_category)--}}
+        {{--@foreach($header_category as $category)--}}
+            {{--{{$category->name}}--}}
+            {{--{{($category->articles[0]->title)}}--}}
+            {{--{{$category->name}}--}}
+            {{--{{dd($category->articles)}}--}}
+        {{--@endforeach--}}
+    {{--@endforeach--}}
+    {{--{{dd($header_articles[0])}}--}}
     {{--@foreach($result as $categories)--}}
         {{--@foreach($categories as $category)--}}
             {{--<b>{{($category->name)}}</b>--}}
@@ -10,79 +20,79 @@
         {{--@endforeach--}}
     {{--@endforeach--}}
     {{--{{dd($categories)}}--}}
-    {{--<div class="">--}}
-        {{--<div class="container">--}}
-            {{--<br>--}}
-            {{--<div class="row no-padding">--}}
-                {{--<div class="col-md-4 no-padding portfolio-section">--}}
-                    {{--<img class="full-width img-responsive images"--}}
-                         {{--style="height:480px; width:100%;object-fit: cover"--}}
-                         {{--src="{{$articles[0]->img_url}}" alt="Articulo 1">--}}
-                    {{--<div class="overlay">--}}
-                        {{--<div class="overlay-text">--}}
-                            {{--<a href="{{url('articles/' . $articles[0]->permalink)}}">Ver más</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="text">--}}
-                        {{--<a href="{{url('articles/' . $articles[0]->permalink)}}"><h4--}}
-                                    {{--style="cursor: pointer;background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">--}}
-                                {{--{{$articles[0]->title}}--}}
-                            {{--</h4></a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-4 no-padding portfolio-section">--}}
-                    {{--<img class="full-width img-responsive images"--}}
-                         {{--style="height:480px; width:100%;object-fit: cover"--}}
-                         {{--src="{{$articles[1]->img_url}}" alt="Articulo 2">--}}
-                    {{--<div class="overlay">--}}
-                        {{--<div class="overlay-text">--}}
-                            {{--<a href="{{url('articles/' . $articles[1]->permalink)}}">Ver más</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="text">--}}
-                        {{--<a href="{{url('articles/' . $articles[1]->permalink)}}"><h4--}}
-                                    {{--style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">--}}
-                                {{--{{$articles[1]->title}}--}}
-                            {{--</h4></a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-4 no-padding">--}}
-                    {{--<div class="col-md-12 no-padding portfolio-section">--}}
-                        {{--<img class="full-width img-responsive images"--}}
-                             {{--style="height:240px; width:100%;object-fit: cover"--}}
-                             {{--src="{{$articles[2]->img_url}}" alt="Articulo 3">--}}
-                        {{--<div class="overlay">--}}
-                            {{--<div class="overlay-text">--}}
-                                {{--<a href="{{url('articles/' . $articles[2]->permalink)}}">Ver más</a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="text">--}}
-                            {{--<a href="{{url('articles/' . $articles[2]->permalink)}}"><h4--}}
-                                        {{--style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">--}}
-                                    {{--{{$articles[2]->title}}--}}
-                                {{--</h4></a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-12 no-padding portfolio-section">--}}
-                        {{--<img class="full-width img-responsive images" src="{{$articles[3]->img_url}}"--}}
-                             {{--style="height:240px; width:100%;object-fit: cover"--}}
-                             {{--alt="Articulo 4">--}}
-                        {{--<div class="overlay">--}}
-                            {{--<div class="overlay-text">--}}
-                                {{--<a href="{{url('articles/' . $articles[3]->permalink)}}">Ver más</a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="text">--}}
-                            {{--<a href="{{url('articles/' . $articles[3]->permalink)}}"><h4--}}
-                                        {{--style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">--}}
-                                    {{--{{$articles[3]->title}}--}}
-                                {{--</h4></a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+    <div class="">
+        <div class="container">
+            <br>
+            <div class="row no-padding">
+                <div class="col-md-4 no-padding portfolio-section">
+                    <img class="full-width img-responsive images"
+                         style="height:480px; width:100%;object-fit: cover"
+                         src="{{$header_articles[0]->img_url}}" alt="{{$header_articles[0]->img_name}}">
+                    <div class="overlay">
+                        <div class="overlay-text">
+                            <a href="{{url('articles/' . $header_articles[0]->permalink)}}">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <a href="{{url('articles/' . $header_articles[0]->permalink)}}"><h4
+                                    style="cursor: pointer;background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
+                                {{$header_articles[0]->title}}
+                            </h4></a>
+                    </div>
+                </div>
+                <div class="col-md-4 no-padding portfolio-section">
+                    <img class="full-width img-responsive images"
+                         style="height:480px; width:100%;object-fit: cover"
+                         src="{{$header_articles[1]->img_url}}" alt="Articulo 2">
+                    <div class="overlay">
+                        <div class="overlay-text">
+                            <a href="{{url('articles/' . $header_articles[1]->permalink)}}">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <a href="{{url('articles/' . $header_articles[1]->permalink)}}"><h4
+                                    style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
+                                {{$header_articles[1]->title}}
+                            </h4></a>
+                    </div>
+                </div>
+                <div class="col-md-4 no-padding">
+                    <div class="col-md-12 no-padding portfolio-section">
+                        <img class="full-width img-responsive images"
+                             style="height:240px; width:100%;object-fit: cover"
+                             src="{{$header_articles[2]->img_url}}" alt="Articulo 3">
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <a href="{{url('articles/' . $header_articles[2]->permalink)}}">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a href="{{url('articles/' . $header_articles[2]->permalink)}}"><h4
+                                        style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
+                                    {{$header_articles[2]->title}}
+                                </h4></a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 no-padding portfolio-section">
+                        <img class="full-width img-responsive images" src="{{$header_articles[3]->img_url}}"
+                             style="height:240px; width:100%;object-fit: cover"
+                             alt="Articulo 4">
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <a href="{{url('articles/' . $header_articles[3]->permalink)}}">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <a href="{{url('articles/' . $header_articles[3]->permalink)}}"><h4
+                                        style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
+                                    {{$header_articles[3]->title}}
+                                </h4></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -137,8 +147,7 @@
                                        data-text="Leer más"><span>Leer más</span></a>
                                 </div>
                             </div>
-
-                        @endforeach
+                            @endforeach
                         @endforeach
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
