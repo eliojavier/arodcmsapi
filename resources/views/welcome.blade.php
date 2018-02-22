@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    {{--@foreach($result as $categories)--}}
+        {{--@foreach($categories as $category)--}}
+            {{--<b>{{($category->name)}}</b>--}}
+            {{--@foreach($category->articles as $article)--}}
+                {{--{{($article->title)}}--}}
+            {{--@endforeach--}}
+        {{--@endforeach--}}
+    {{--@endforeach--}}
+    {{--{{dd($categories)}}--}}
     {{--<div class="">--}}
         {{--<div class="container">--}}
             {{--<br>--}}
@@ -74,12 +83,22 @@
             {{--</div>--}}
         {{--</div>--}}
     {{--</div>--}}
+
+
+
+
+    {{--****************************************************--}}
+
+
+
     <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                    <div class="col-md-6">
-                        @foreach($categories as $category)
+
+                        @foreach($result as $categories)
+                            @foreach($categories as $category)
+                            <div class="col-md-6">
                             <h3>{{$category->name}}</h3>
                             <article class="single-from-blog">
                                 <figure>
@@ -99,7 +118,7 @@
                                        data-text="Leer más"><span>Leer más</span></a>
                                 </div>
                             </article>
-                            @for ($i = 1; $i < 4; $i++)
+                            @for ($i = 1; $i <= 4; $i++)
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <figure>
                                         <a href="{{url('articles/' . $category->articles[$i]->permalink)}}"><img
@@ -117,8 +136,10 @@
                                     <p>{!!substr(html_entity_decode($category->articles[$i]->body), 0, 90)!!}...</p>
                                 </div>
                             @endfor
+                            </div>
+
                         @endforeach
-                    </div>
+                        @endforeach
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                     <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
@@ -128,6 +149,13 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+    {{--****************************************************--}}
     {{--<section id="from-blog">--}}
         {{--<div class="container">--}}
             {{--<div class="row">--}}

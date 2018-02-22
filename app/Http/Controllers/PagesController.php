@@ -14,14 +14,15 @@ class PagesController extends Controller
     {
         $categories = Category::active()->select('id', 'name')->get();
 
-        $articles = new Collection();
+        $result = new Collection();
         foreach ($categories as $category) {
-            $articles->push(Category::where('id', $category->id)
+            $result->push(Category::where('id', $category->id)
                                         ->with(['articles' => function ($query) {
                                             $query->active()->latest()->take(5);
                                         }])->get());
         }
 //        return response()->json(['categories' => $articles]);
-        return view('welcome', ['categories' => $articles]);
+//        dd($articles->toJson());
+        return view('welcome', ['result' => $result]);
     }
 }
