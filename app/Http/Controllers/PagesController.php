@@ -18,7 +18,7 @@ class PagesController extends Controller
         foreach ($categories as $category) {
             $articles->push(Category::where('id', $category->id)
                                         ->with(['articles' => function ($query) {
-                                            $query->take(5);
+                                            $query->active()->latest()->take(5);
                                         }])->get());
         }
         return response()->json(['categories' => $articles]);
