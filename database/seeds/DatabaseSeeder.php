@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleUserTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
         factory('App\User', 15)->create();
-        factory('App\Article', 10)->create();
+        factory('App\Article', 100)->create();
         $this->call(ArticlesTableSeeder::class);
         $this->call(ArticleCategoryTableSeeder::class);
 

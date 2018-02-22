@@ -72,6 +72,7 @@ class ArticleController extends Controller
             $file->move($base_path, $filename);
 
             $article->img_url = strtolower($server_path . $base_path . "/" . $filename);
+            $article->img_name = $filename;
             $article->update();
 
             return response()->json(['success' => true,

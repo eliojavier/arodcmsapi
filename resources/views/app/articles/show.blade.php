@@ -31,7 +31,7 @@
                                         </div>
                                         <figure>
                                             <a><img style="height: 500px; object-fit: contain"
-                                                                            alt="{{$article->seo_title}}" src="{{$article->img_url}}"></a>
+                                                                            alt="{{$article->img_name}}" src="{{$article->img_url}}"></a>
                                         </figure>
                                         {{--<div class="blog-details-content" innerHTML="{{$article->body}}">--}}
                                         <div class="blog-details-content">
