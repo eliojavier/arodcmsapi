@@ -13,14 +13,12 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $categories = [
-            ['name' => 'Economics'],
-            ['name' => 'Parenting'],
-            ['name' => 'Career'],
-            ['name' => 'Political'],
-            ['name' => 'Finance'],
-            ['name' => 'Gaming'],
-            ['name' => 'Medical'],
-            ['name' => 'Social Media'],
+            ['name' => 'Tarjetas'],
+            ['name' => 'Deudas'],
+            ['name' => 'Préstamos'],
+            ['name' => 'Haz dinero'],
+            ['name' => 'Emprender'],
+            ['name' => 'Economía']
         ];
 
         DB::table('categories')->insert($categories);

@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('permalink')->unique()->nullable();
             $table->longText('body');
             $table->string('img_url')->nullable();
+            $table->string('img_name')->nullable();
             $table->string('seo_title')->nullable();
             $table->longText('seo_description')->nullable();
             $table->longText('keywords')->nullable();
