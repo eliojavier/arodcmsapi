@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'PagesController@index');
-Route::get('/articles', 'WebArticleController@index');
+Route::get('/', 'WebArticleController@index');
+//Route::get('/articles', 'WebArticleController@index');
 Route::get('/articles/{permalink}', 'WebArticleController@show');
+Route::get('/{category}', 'WebArticleController@articlesByCategory');
+Route::get('/{category}/page/{page}', 'WebArticleController@articlesByCategoryPaginated');

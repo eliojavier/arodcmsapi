@@ -34,11 +34,10 @@
                                         <div class="blog-details-content">
                                             {!!html_entity_decode($article->body)!!}
                                         </div>
-                                        <p>Categoría: {{$article->categories[0]->name}}</p>
+                                        <p>Categoría: <a href="{{url('/'.$article->categories[0]->name)}}">{{$article->categories[0]->name}}</a></p>
                                     </article>
 
-                                        <h2 style="margin-left: 25px">Artículos Relacionados:
-                                        </h2>
+                                        <h2 style="margin-left: 25px">Artículos Relacionados:</h2>
                                     <br>
                                     @foreach($related_articles->articles as $related_article)
                                         <div class="col-md-4">

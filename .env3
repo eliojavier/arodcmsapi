@@ -6,11 +6,11 @@ APP_LOG_LEVEL=debug
 APP_URL=http://localhost
 
 DB_CONNECTION=mysql
-DB_HOST=www.alonsorodriguez.org
+DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=arod_arorg
-DB_USERNAME=arod_arorg
-DB_PASSWORD=?Mhp)eU.qrPB
+DB_DATABASE=arodcms
+DB_USERNAME=root
+DB_PASSWORD=root
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file

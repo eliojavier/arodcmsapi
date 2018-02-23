@@ -105,10 +105,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    @php
+                        $iteration = 0
+                    @endphp
 
-                        @foreach($result as $categories)
+                @foreach($result as $categories)
                             @foreach($categories as $category)
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="{{$iteration %2 ==0 ? 'float:left' : 'float:right'}}">
+
                             <h3>{{$category->name}}</h3>
                             <article class="single-from-blog">
                                 <figure>
@@ -123,7 +127,7 @@
                                 </div>
                                 <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}...</p>
                             </article>
-                            @for ($i = 1; $i <= 4; $i++)
+                            @for ($i = 1; $i <= count($category->articles) -1; $i++)
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <figure>
                                         <a href="{{url('articles/' . $category->articles[$i]->permalink)}}"><img
@@ -147,6 +151,9 @@
                                        data-text="Leer más"><span>Leer más</span></a>
                                 </div>
                             </div>
+                            @php
+                                $iteration++
+                            @endphp
                             @endforeach
                         @endforeach
                 </div>
