@@ -53,7 +53,7 @@ class WebArticleController extends Controller
 //        }
 //        dd($header_articles);
 
-        return view('app.articles.home', ['result' => $result, 'header_articles' => $header_articles]);
+        return view('app.articles.home', ['result' => $result, 'header_articles' => $header_articles, 'categories' => $categories]);
     }
 
     public function show($permalink)
