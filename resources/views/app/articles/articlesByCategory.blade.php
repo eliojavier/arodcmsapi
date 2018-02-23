@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+{{--{{dd($articles)}}--}}
+    {{--@foreach($result->articles as $article)--}}
+    {{--{{dd($article)}}--}}
+    {{--@endforeach--}}
     <div id="blog">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="blog-area">
                         <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                                 <div class="blog-left blog-archive">
                                     <!-- Start single blog post -->
                                     @foreach($articles as $article)
@@ -29,38 +33,40 @@
                                                         <span
                                                                 class="blog-date">{{$article->created_at}}</span></p>
                                                 </div>
-                                                <p>{!!substr(html_entity_decode($article->body), 0, 200)!!}... <a
+                                                <p>{!!substr(html_entity_decode($article->body), 0, 200)!!}... <a style="color: #37c6f5 !important"
                                                             href="{{url('articles/' . $article->permalink)}}">Leer
                                                         más</a>
                                                 </p>
                                             </div>
                                         </article>
-                                @endforeach
+                                    @endforeach
                                 <!-- End single blog post -->
                                     <!--Start Blog pagination -->
-                                    <nav>
-                                        <ul style="border-radius: 0px!important" class="pagination blog-pagination">
-                                            <li>
-                                                <a href="#" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                </a>
-                                            </li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li>
-                                                <a href="#" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                    <!-- End blog pagination -->
+
+                                    {{$articles->links()}}
+                                    {{--<nav>--}}
+                                        {{--<ul style="border-radius: 0px!important" class="pagination blog-pagination">--}}
+                                            {{--<li>--}}
+                                                {{--<a href="#" aria-label="Previous">--}}
+                                                    {{--<span aria-hidden="true">&laquo;</span>--}}
+                                                {{--</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a href="#">1</a></li>--}}
+                                            {{--<li><a href="#">2</a></li>--}}
+                                            {{--<li><a href="#">3</a></li>--}}
+                                            {{--<li><a href="#">4</a></li>--}}
+                                            {{--<li><a href="#">5</a></li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="#" aria-label="Next">--}}
+                                                    {{--<span aria-hidden="true">&raquo;</span>--}}
+                                                {{--</a>--}}
+                                            {{--</li>--}}
+                                        {{--</ul>--}}
+                                    {{--</nav>--}}
+                                    {{--<!-- End blog pagination -->--}}
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                 <aside class="blog-right">
                                     <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
                                     <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
