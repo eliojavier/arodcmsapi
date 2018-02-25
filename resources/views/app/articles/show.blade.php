@@ -28,7 +28,7 @@
                                                 en <span class="blog-date">{{$article->created_at}}</span></p>
                                         </div>
                                         <figure>
-                                            <a><img style="height: 500px; object-fit: contain"
+                                            <a><img style="height: 375px; object-fit: contain"
                                                     alt="{{$article->img_name}}" src="{{$article->img_url}}"></a>
                                         </figure>
                                         <div class="blog-details-content">
@@ -65,7 +65,9 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-
+                                <a href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
+                                    <img style="width: 100%" src="{{asset('images/bannerHorizontal.jpeg')}}" alt="banner">
+                                </a>
                             </div>
                         </div>
                     </div>

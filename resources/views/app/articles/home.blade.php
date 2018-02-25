@@ -198,7 +198,9 @@
                     {{--@foreach($result as $categories)--}}
                     <div class="row">
                         <div class="col-md-6">
-                            <h3>{{$categories[0]->name}}</h3>
+                            <a href="{{url($categories[0]->name)}}">
+                                <h3>{{$categories[0]->name}}</h3>
+                            </a>
                             <article class="single-from-blog">
                                 <figure>
                                     <a href="{{url('articles/' . $categories[0]->articles[0]->permalink)}}"><img
@@ -233,13 +235,15 @@
                                 </div>
                             @endfor
                             <div style="text-align: center!important;">
-                                <a href="{{url('articles/' . $categories[0]->articles[0]->permalink)}}"
+                                <a href="{{url($categories[0]->name)}}"
                                    class="button button-default read-more"
                                    data-text="Leer más"><span>Leer más</span></a>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <h3>{{$categories[1]->name}}</h3>
+                            <a href="{{url($categories[1]->name)}}">
+                                <h3>{{$categories[1]->name}}</h3>
+                            </a>
                             <article class="single-from-blog">
                                 <figure>
                                     <a href="{{url('articles/' . $categories[1]->articles[0]->permalink)}}"><img
@@ -274,7 +278,7 @@
                                 </div>
                             @endfor
                             <div style="text-align: center!important;">
-                                <a href="{{url('articles/' . $categories[1]->articles[0]->permalink)}}"
+                                <a href="{{url($categories[1]->name)}}"
                                    class="button button-default read-more"
                                    data-text="Leer más"><span>Leer más</span></a>
                             </div>
@@ -282,7 +286,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <h3>{{$categories[2]->name}}</h3>
+                            <a href="{{url($categories[2]->name)}}">
+                                <h3>{{$categories[2]->name}}</h3>
+                            </a>
                             <article class="single-from-blog">
                                 <figure>
                                     <a href="{{url('articles/' . $categories[2]->articles[0]->permalink)}}"><img
@@ -317,13 +323,15 @@
                                 </div>
                             @endfor
                             <div style="text-align: center!important;">
-                                <a href="{{url('articles/' . $categories[2]->articles[0]->permalink)}}"
+                                <a href="{{url($categories[2]->name)}}"
                                    class="button button-default read-more"
                                    data-text="Leer más"><span>Leer más</span></a>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <h3>{{$categories[3]->name}}</h3>
+                            <a href="{{url($categories[3]->name)}}">
+                                <h3>{{$categories[3]->name}}</h3>
+                            </a>
                             <article class="single-from-blog">
                                 <figure>
                                     <a href="{{url('articles/' . $categories[3]->articles[0]->permalink)}}"><img
@@ -358,7 +366,7 @@
                                 </div>
                             @endfor
                             <div style="text-align: center!important;">
-                                <a href="{{url('articles/' . $categories[3]->articles[0]->permalink)}}"
+                                <a href="{{url($categories[3]->name)}}"
                                    class="button button-default read-more"
                                    data-text="Leer más"><span>Leer más</span></a>
                             </div>
@@ -366,7 +374,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <h3>{{$categories[4]->name}}</h3>
+                            <a href="{{url($categories[4]->name)}}">
+                                <h3>{{$categories[4]->name}}</h3>
+                            </a>
                             <article class="single-from-blog">
                                 <figure>
                                     <a href="{{url('articles/' . $categories[4]->articles[0]->permalink)}}"><img
@@ -401,13 +411,15 @@
                                 </div>
                             @endfor
                             <div style="text-align: center!important;">
-                                <a href="{{url('articles/' . $categories[4]->articles[0]->permalink)}}"
+                                <a href="{{url($categories[4]->name)}}"
                                    class="button button-default read-more"
                                    data-text="Leer más"><span>Leer más</span></a>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <h3>{{$categories[5]->name}}</h3>
+                            <a href="{{url($categories[5]->name)}}">
+                                <h3>{{$categories[5]->name}}</h3>
+                            </a>
                             <article class="single-from-blog">
                                 <figure>
                                     <a href="{{url('articles/' . $categories[5]->articles[0]->permalink)}}"><img
@@ -442,7 +454,7 @@
                                 </div>
                             @endfor
                             <div style="text-align: center!important;">
-                                <a href="{{url('articles/' . $categories[5]->articles[0]->permalink)}}"
+                                <a href="{{url($categories[5]->name)}}"
                                    class="button button-default read-more"
                                    data-text="Leer más"><span>Leer más</span></a>
                             </div>
@@ -452,9 +464,9 @@
                     {{--@endforeach--}}
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
-                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
-                    <img style="width: 100%" src="{{asset('images/banner.png')}}" alt="banner">
+                    <a href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
+                        <img style="width: 100%" src="{{asset('images/bannerHorizontal.jpeg')}}" alt="banner">
+                    </a>
                 </div>
             </div>
         </div>
