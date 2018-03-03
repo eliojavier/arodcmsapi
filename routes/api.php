@@ -41,14 +41,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'isSuperAdmin']]
 Route::group(['middleware' => ['auth:api']], function () {
     //USER CONTROLLER
     Route::get('users/info', 'UserController@showUserInfo');
+    Route::put('users/password', 'UserController@updatePassword');
 
     //ARTICLE CONTROLLER
     Route::get('articles', 'ArticleController@index')->middleware('canSeeMyArticles');
+    Route::put('articles/status/{article}', 'ArticleController@publish')->middleware('canEditArticle');
     Route::put('articles/{article}', 'ArticleController@update')->middleware('canEditArticle');
     Route::post('articles', 'ArticleController@store')->middleware('canWriteArticle');
     Route::post('articles/{article}/image', 'ArticleController@storeImage');
     Route::get('articles/{article}', 'ArticleController@show')->middleware('canSeeArticle');
-    Route::delete('articles/{article}', 'ArticleController@updateStatus');
+    Route::delete('articles/{article}', 'ArticleController@destroy');
 
     //CATEGORY CONTROLLER
     Route::get('categories', 'CategoryController@index');

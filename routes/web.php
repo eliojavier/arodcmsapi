@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'WebArticleController@index');
+//Route::get('/sitemap/generate', 'SitemapController@sitemapGenerator');
+
 //Route::get('/articles', 'WebArticleController@index');
 Route::get('/articles/{permalink}', 'WebArticleController@show');
 Route::get('/{category}', 'WebArticleController@articlesByCategory');

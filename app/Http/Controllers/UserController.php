@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -23,7 +24,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt(123456);
         $user->save();
-        $user->roles()->sync($request->roles);
+        $user->roles()->sync([3]);
 
         return response()->json(['success' => true, 'msg' => 'user stored']);
     }
@@ -74,5 +75,31 @@ class UserController extends Controller
         $user = User::findUserByToken($request->user()->id);
 
         return response()->json(['user' => $user->name]);
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required',
+            'password' => 'required|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['success' => false,
+                'errors' => $validator->errors()])
+                ->setStatusCode(400);
+        }
+
+        $user = User::findUserByToken($request->user()->id);
+
+        if (Hash::check($request->current_password, $user->password)) {
+            $user->password = Hash::make($request->password);
+            $user->update();
+            return response()->json(['success' => true,
+                'message' => 'user password updated']);
+        }
+
+        return response()->json(['error' => 'wrong password'])
+            ->setStatusCode(400);
     }
 }

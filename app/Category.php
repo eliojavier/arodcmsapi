@@ -11,6 +11,13 @@ class Category extends Model
         return $this->belongsToMany(Article::class);
     }
 
+    public function recentArticles()
+    {
+        return $this->belongsToMany(Article::class)
+                                    ->orderBy('created_at', 'desc');
+
+    }
+
     public function scopeActive($query)
     {
         return $query->where('status', 'active');

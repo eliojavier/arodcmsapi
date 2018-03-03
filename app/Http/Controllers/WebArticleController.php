@@ -5,55 +5,44 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Category;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
 
 class WebArticleController extends Controller
 {
     public function index()
     {
         $categories = Category::active()->select('id', 'name')->get();
-        $result = new Collection();
+
+        $results = new Collection();
         foreach ($categories as $category) {
-            $result->push(Category::where('id', $category->id)
+            $results->push(Category::where('id', $category->id)
                 ->with(['articles' => function ($query) {
-                    $query->active()->latest()->take(5);
+                    $query->active()->orderBy('created_at', 'desc')->take(5);
                 }])->get());
         }
 
-        $categories = Category::active()->select('id', 'name')->take(6)->get();
-        $header_categories = new Collection();
+        $categoryWithArticles =[];
+        foreach($results as $result) {
+            foreach ($result as $category) {
+                array_push($categoryWithArticles, $category);
+            }
+        }
+
+        $results = new Collection();
         foreach ($categories as $category) {
-            $header_categories->push(Category::where('id', $category->id)
+            $results->push(Category::where('id', $category->id)
                 ->with(['articles' => function ($query) {
-                    $query->active()->latest()->take(1);
+                    $query->active()->orderBy('created_at', 'desc')->take(1);
                 }])->get());
         }
 
-        $header_categories = new Collection();
-        foreach ($categories as $category) {
-            $header_categories->push(Article::latest()
-                ->with(['categories' => function ($query) use($category) {
-                    $query->active()->where('categories.id', $category->id)->first();
-                }])->first());
+        $header_articles =[];
+        foreach($results as $result) {
+            foreach ($result as $category) {
+                array_push($header_articles, $category);
+            }
         }
 
-        $header_articles = new Collection();
-        foreach ($categories as $category) {
-            $header_articles->push(Article::
-            with(['categories' => function ($query) use($category) {
-                $query->active()->where('categories.id', $category->id)->first();
-            }])->first());
-        }
-
-//        $header_articles = new Collection();
-//        foreach ($categories as $category) {
-//            $header_categories->push(Article::whereHas('categories', function ($query) use ($category) {
-//                $query->active()->where('articles_category.id', $category->id);
-//            }))->first();
-//        }
-//        dd($header_articles);
-
-        return view('app.articles.home', ['result' => $result, 'header_articles' => $header_articles, 'categories' => $categories]);
+        return view('app.articles.home', ['categories' => $categoryWithArticles, 'header_articles' => $header_articles]);
     }
 
     public function show($permalink)
@@ -74,11 +63,12 @@ class WebArticleController extends Controller
 
     public function articlesByCategory($category)
     {
+        $cat = Category::wherePermalink($category)->first();
         $articles = Article::whereHas('categories', function ($q) use($category) {
-            $q->whereName($category);
+            $q->wherePermalink($category);
         })->latest()->active()->paginate(10);
 
-        return view ('app.articles.articlesByCategory', ['articles' => $articles]);
+        return view ('app.articles.articlesByCategory', ['articles' => $articles, 'category' =>$cat->name]);
     }
 
 //    public function articlesByCategoryPaginated($category, $page)
