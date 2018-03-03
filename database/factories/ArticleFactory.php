@@ -9,6 +9,6 @@ $factory->define(App\Article::class, function (Faker $faker) {
         'img_url' => $faker->imageUrl(),
         'seo_description' => $faker->sentence,
         'keywords' => $faker->word . ', ' . $faker->word . ', ' . $faker->word,
-        'user_id' => $faker->numberBetween(3, 17)
+        'user_id' => 1
     ];
 });

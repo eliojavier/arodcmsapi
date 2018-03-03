@@ -32,6 +32,7 @@ class CategoryController extends Controller
     {
         $category = new Category();
         $category->name = $request->name;
+        $category->permalink = str_slug($request->name);
         $category->save();
 
         return response()->json(['success' => true, 'msg' => 'category stored']);
@@ -41,6 +42,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->name = $request->name;
+        $category->permalink = str_slug($request->name);
         $category->update();
 
         return response()->json(['success' => true, 'msg' => 'category updated']);

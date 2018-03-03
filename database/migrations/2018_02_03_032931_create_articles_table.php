@@ -23,7 +23,7 @@ class CreateArticlesTable extends Migration
             $table->string('seo_title')->nullable();
             $table->longText('seo_description')->nullable();
             $table->longText('keywords')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('status', ['active', 'inactive', 'preview'])->default('active');
             $table->enum('visibility', ['public', 'private'])->default('public');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('deleted_by')->nullable();

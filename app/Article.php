@@ -33,6 +33,11 @@ class Article extends Model
         return $query->where('status', 'active');
     }
 
+    public function scopeLatestFive($query)
+    {
+        return $query->orderBy('created_at', 'desc')->limit(5);
+    }
+
     public function getCreatedAtAttribute($value)
     {
         return Carbon::parse($value)->format('Y/m/d');

@@ -7,6 +7,8 @@ use App\User;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Tags\Url;
 
 class ArticleController extends Controller
 {
@@ -37,9 +39,15 @@ class ArticleController extends Controller
         $article->seo_title = $request->seo_title;
         $article->seo_description = $request->seo_description;
         $article->keywords = $request->keywords;
+        $article->status = 'preview';
         $article->user_id = $user->id;
         $article->save();
         $article->categories()->sync($request->category);
+
+//        SitemapGenerator::create('http://blog.alonsorodriguez.org')
+//                            ->getSitemap()
+//                            ->add(Url::create('/'.$article->permalink)->setPriority(0.5))
+//                            ->writeToFile('sitemap.xml');
 
         return response()->json(['success' => true,
                                 'msg' => 'article stored',
@@ -65,10 +73,7 @@ class ArticleController extends Controller
             $file = $request->image;
             $base_path = 'images/articles';
             $server_path = 'http://' . $_SERVER['HTTP_HOST'] . '/';
-//            $filename = strtolower(date('Y-m-d-h-i-s') . "."
-//                . sha1($file->getClientOriginalName()) . "."
-//                . $file->getClientOriginalExtension());
-            $filename = $file->getClientOriginalName();
+            $filename = strtolower($file->getClientOriginalName());
             $file->move($base_path, $filename);
 
             $article->img_url = strtolower($server_path . $base_path . "/" . $filename);
@@ -133,12 +138,20 @@ class ArticleController extends Controller
         return response()->json(['success' => true, 'msg' => 'article updated']);
     }
 
-
-    public function updateStatus(Article $article)
+    public function publish(Article $article)
     {
-        $article->status = $article->status == 'active' ? 'inactive' : 'active';
+        $article->status = 'active';
         $article->update();
 
-        return response()->json(['success' => true, 'msg' => 'article updated']);
+        return response()->json(['success' => true, 'msg' => 'article published']);
+    }
+
+
+    public function destroy(Article $article)
+    {
+        $article->status = 'inactive';
+        $article->update();
+
+        return response()->json(['success' => true, 'msg' => 'article destroyed']);
     }
 }

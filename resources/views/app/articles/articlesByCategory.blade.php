@@ -1,11 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    {{--{{dd($articles)}}--}}
-    {{--@foreach($result->articles as $article)--}}
-    {{--{{dd($article)}}--}}
-    {{--@endforeach--}}
-
     <div class="row"
          style="background-color: #f8f8f8; padding-top: 50px; padding-left: 50px; padding-right: 50px; padding-bottom: 0">
         <div class="col-md-offset-2 col-md-8">
@@ -18,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Categoría</h2>
+                    <h2>{{$category}}</h2>
                     <div class="blog-area">
                         <div class="row">
                             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
