@@ -24,7 +24,7 @@
                                     <article class="single-from-blog">
                                         <div class="blog-title">
                                             <h1>{{$article->title}}</h1>
-                                            <p>Publicado por <a href="#" class="blog-admin">{{$article->user->name}}</a>
+                                            <p>Publicado por <a class="blog-admin">{{$article->user->name}}</a>
                                                 en <span class="blog-date">{{$article->created_at}}</span></p>
                                         </div>
                                         <figure>
