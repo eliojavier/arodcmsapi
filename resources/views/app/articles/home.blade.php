@@ -26,7 +26,8 @@
                     <div class="col-md-6 no-padding portfolio-section">
                         <img class="full-width img-responsive images"
                              style="height:240px; width:100%;object-fit: cover"
-                             src="{{$header_articles[1]->articles[0]->img_url}}" alt="{{$header_articles[1]->articles[0]->img_name}}">
+                             src="{{$header_articles[1]->articles[0]->img_url}}"
+                             alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
                                 <a href="{{url($header_articles[1]->permalink)}}">{{$header_articles[1]->name}}</a>
@@ -44,7 +45,8 @@
                     <div class="col-md-12 no-padding portfolio-section">
                         <img class="full-width img-responsive images"
                              style="height:240px; width:100%;object-fit: cover"
-                             src="{{$header_articles[2]->articles[0]->img_url}}" alt="{{$header_articles[1]->articles[0]->img_name}}">
+                             src="{{$header_articles[2]->articles[0]->img_url}}"
+                             alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
                                 <a href="{{url($header_articles[2]->permalink)}}">{{$header_articles[2]->name}}</a>
@@ -81,7 +83,8 @@
                     <div class="col-md-6 no-padding portfolio-section">
                         <img class="full-width img-responsive images"
                              style="height:240px; width:100%;object-fit: cover"
-                             src="{{$header_articles[4]->articles[0]->img_url}}" alt="{{$header_articles[1]->articles[0]->img_name}}">
+                             src="{{$header_articles[4]->articles[0]->img_url}}"
+                             alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
                                 <a href="{{url($header_articles[4]->permalink)}}">{{$header_articles[4]->name}}</a>
@@ -99,7 +102,8 @@
                     <div class="col-md-12 no-padding portfolio-section">
                         <img class="full-width img-responsive images"
                              style="height:240px; width:100%;object-fit: cover"
-                             src="{{$header_articles[5]->articles[0]->img_url}}" alt="{{$header_articles[1]->articles[0]->img_name}}">
+                             src="{{$header_articles[5]->articles[0]->img_url}}"
+                             alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
                                 <a href="{{url($header_articles[5]->permalink)}}">{{$header_articles[5]->name}}</a>
@@ -142,7 +146,10 @@
                                                 <a href="{{url('articles/' . $category->articles[0]->permalink)}}">{{$category->articles[0]->title}}</a>
                                             </h2>
                                         </div>
-                                        <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}...</p>
+                                        <div class="inner-styles">
+                                            <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}
+                                                ...</p>
+                                        </div>
                                     </article>
                                     @foreach($category->articles as $article)
                                         @if (!$loop->first)
@@ -160,8 +167,10 @@
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
                                                     </h4>
                                                 </div>
-                                                <p>{!!substr(html_entity_decode($article->body), 0, 90)!!}
-                                                    ...</p>
+                                                <div class="inner-styles">
+                                                    <p>{!!substr(html_entity_decode($article->body), 0, 90)!!}
+                                                        ...</p>
+                                                </div>
                                             </div>
                                         @endif
                                     @endforeach
@@ -198,7 +207,10 @@
                                                 <a href="{{url('articles/' . $category->articles[0]->permalink)}}">{{$category->articles[0]->title}}</a>
                                             </h2>
                                         </div>
-                                        <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}...</p>
+                                        <div class="inner-styles">
+                                            <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}
+                                                ...</p>
+                                        </div>
                                     </article>
                                     @foreach($category->articles as $article)
                                         @if (!$loop->first)
@@ -216,8 +228,10 @@
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
                                                     </h4>
                                                 </div>
-                                                <p>{!!substr(html_entity_decode($article->body), 0, 90)!!}
-                                                    ...</p>
+                                                <div class="inner-styles">
+                                                    <p>{!!substr(html_entity_decode($article->body), 0, 90)!!}
+                                                        ...</p>
+                                                </div>
                                             </div>
                                         @endif
                                     @endforeach
