@@ -52,8 +52,11 @@
                                                         <a href="{{url('articles/' . $related_article->permalink)}}">{{$related_article->title}}</a>
                                                     </h2>
                                                 </div>
-                                                <p>{!!substr(html_entity_decode($related_article->body), 0, 150)!!}
+                                                <div class="inner-styles">
+                                                    <p>{!!substr(html_entity_decode($related_article->body), 0, 150)!!}
                                                     ...</p>
+                                                </div>
+
                                             </article>
                                             <div style="text-align: center!important;">
                                                 <a href="{{url('articles/' . $related_article->permalink)}}"
