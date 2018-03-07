@@ -32,7 +32,7 @@
                                                     alt="{{$article->img_name}}" src="{{$article->img_url}}"></a>
                                         </figure>
                                         <div class="blog-details-content">
-                                            {!!html_entity_decode($article->body)!!}
+                                            {!!$article->body!!}
                                         </div>
                                         <p>Categoría: <a href="{{url('/'.$article->categories[0]->permalink)}}">{{$article->categories[0]->name}}</a></p>
                                     </article>

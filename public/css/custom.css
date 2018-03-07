@@ -363,7 +363,42 @@ Author URI : http://www.markups.io/
     font-weight: 100 !important;
     font-family: Helvetica, sans-serif !important;
     color: #333333 !important;
-    font-style: normal!important;
+    font-style: normal !important;
+}
+
+.navbar-styles {
+    background: linear-gradient(#5f6469, #51575c);
+    border-color: #202020;
+    border-radius: 0px!important;
+}
+
+.custom-navbar {
+    width: 100% !important;
+    display: table !important;
+    text-align: center !important;
+    font-family: Raleway !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+.custom-navbar li {
+    display: inline-block !important;
+    float: none !important;
+}
+
+.custom-navbar a:hover{
+    background-color: transparent!important;
+    color: #37c6f5!important;
+}
+
+.custom-navbar a:focus{
+    background-color: transparent!important;
+    color: #37c6f5!important;
+}
+
+.custom-navbar a {
+    color:white!important;
+    transition: 0.5s;
 }
 
 /*.inner-styles {*/

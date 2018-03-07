@@ -168,8 +168,9 @@
                                                     </h4>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    <p>{!!substr(html_entity_decode($article->body), 0, 90)!!}
-                                                        ...</p>
+                                                    {!! \Illuminate\Support\Str::words($article->body, 15)!!}
+                                                    {{--<p>{!!substr($article->body, 0, 90)!!}--}}
+                                                        {{--...</p>--}}
                                                 </div>
                                             </div>
                                         @endif

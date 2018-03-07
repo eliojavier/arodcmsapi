@@ -33,17 +33,21 @@
                                                     <h2 style="font-style: normal!important;">
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
                                                     </h2>
-                                                    <p style="font-style: normal!important; font-weight: 100!important;">Publicado por <a
+                                                    <p style="font-style: normal!important; font-weight: 100!important;">
+                                                        Publicado por <a
                                                                 class="blog-admin">{{$article->user->name}}</a> on
                                                         <span
                                                                 class="blog-date">{{$article->created_at}}</span></p>
                                                 </div>
                                                 <div class="inner-styles">
-                                                <p>{!!substr(html_entity_decode($article->body), 0, 200)!!}... <a
-                                                            style="color: #37c6f5 !important"
-                                                            href="{{url('articles/' . $article->permalink)}}">Leer
-                                                        más</a>
-                                                </p>
+                                                    {!! \Illuminate\Support\Str::words($article->body, 30)!!}
+                                                </div>
+                                                <div class="inner-styles">
+                                                    <p><a style="color: #37c6f5 !important"
+                                                          href="{{url('articles/' . $article->permalink)}}">Leer
+                                                            más
+                                                        </a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </article>

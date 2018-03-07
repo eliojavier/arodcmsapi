@@ -34,7 +34,28 @@
 </head>
 <body>
     <div id="app">
+        <nav class="navbar navbar-styles">
+            <div class="container-fluid">
+                {{--<div class="navbar-header">--}}
+                    {{--<a style="font-size: Raleway" class="navbar-brand" href="#">Blog</a>--}}
+                {{--</div>--}}
+                <ul class="nav navbar-nav custom-navbar">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tarjetas">Tarjetas</a></li>
+                    <li><a href="/deudas">Deudas</a></li>
+                    <li><a href="/prestamos">Préstamos</a></li>
+                    <li><a href="/haz-dinero">Haz Dinero</a></li>
+                    <li><a href="/emprender">Emprender</a></li>
+                    <li><a href="/economia">Economía</a></li>
+                </ul>
+            </div>
+        </nav>
         @yield('content')
+        {{--<footer class="footer">--}}
+            {{--<div class="container">--}}
+                {{--...--}}
+            {{--</div>--}}
+        {{--</footer>--}}
     </div>
 
     <!-- Scripts -->
