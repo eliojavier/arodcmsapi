@@ -44,10 +44,9 @@ class ArticleController extends Controller
         $article->save();
         $article->categories()->sync($request->category);
 
-//        SitemapGenerator::create('http://blog.alonsorodriguez.org')
-//                            ->getSitemap()
-//                            ->add(Url::create('/'.$article->permalink)->setPriority(0.5))
-//                            ->writeToFile('sitemap.xml');
+        SitemapGenerator::create('http://blog.alonsorodriguez.org')
+                            ->getSitemap()
+                            ->writeToFile('sitemap.xml');
 
         return response()->json(['success' => true,
                                 'msg' => 'article stored',
@@ -128,6 +127,7 @@ class ArticleController extends Controller
         return response()->json(['success' => true,
                                 'msg' => 'article updated',
                                 'id' => $article->id]);
+
     }
 
     public function updateVisibility(Article $article)

@@ -47,18 +47,22 @@ class WebArticleController extends Controller
 
     public function show($permalink)
     {
-        $article = Article::where('permalink', $permalink)->first();
-        $result = Category::where('id', $article->categories[0]->id)
-            ->with(['articles' => function ($query) use ($article) {
-                $query->where('articles.id', '!=', $article->id)
-                    ->take(3)
-                    ->latest();
-            }])
-            ->get();
+        $article = Article::where('permalink', $permalink)->active()->first();
+        if ($article != null) {
+            $result = Category::where('id', $article->categories[0]->id)
+                ->with(['articles' => function ($query) use ($article) {
+                    $query->where('articles.id', '!=', $article->id)
+                        ->active()
+                        ->take(3)
+                        ->latest();
+                }])
+                ->get();
 
-        return view('app.articles.show', ['article' => $article,
-                                                'related_articles' => $result[0]]);
+            return view('app.articles.show', ['article' => $article,
+                'related_articles' => $result[0]]);
+        }
 
+        abort(404);
     }
 
     public function articlesByCategory($category)
