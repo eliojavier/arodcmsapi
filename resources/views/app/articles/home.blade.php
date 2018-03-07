@@ -133,7 +133,7 @@
                             @if ($iteration % 2 == 0)
                                 <div class="col-md-12">
                                     <a href="{{url($category->permalink)}}">
-                                        <h3>{{$category->name}}</h3>
+                                        <h3 style="font-style: normal">{{$category->name}}</h3>
                                     </a>
                                     <article class="single-from-blog">
                                         <figure>
@@ -142,7 +142,7 @@
                                                         alt="{{$category->articles[0]->img_name}}"></a>
                                         </figure>
                                         <div class="blog-title">
-                                            <h2>
+                                            <h2 style="font-style: normal">
                                                 <a href="{{url('articles/' . $category->articles[0]->permalink)}}">{{$category->articles[0]->title}}</a>
                                             </h2>
                                         </div>
@@ -163,7 +163,7 @@
                                             </div>
                                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                                 <div class="blog-title">
-                                                    <h4 style="margin: 0; font-size: 15px;font-weight: bold">
+                                                    <h4 style="margin: 0; font-size: 15px;font-weight: bold; font-style: normal">
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
                                                     </h4>
                                                 </div>
@@ -176,9 +176,9 @@
                                         @endif
                                     @endforeach
                                     <div style="text-align: center!important;">
-                                        <a href="{{url($category->permalink)}}"
+                                        <a style="font-style: normal" href="{{url($category->permalink)}}"
                                            class="button button-default read-more"
-                                           data-text="Leer más"><span>Leer más</span></a>
+                                           data-text="Leer más"><span style="font-style: normal">Leer más</span></a>
                                     </div>
                                 </div>
                             @endif
@@ -195,7 +195,7 @@
                             @if ($iteration % 2 != 0)
                                 <div class="col-md-12">
                                     <a href="{{url($category->permalink)}}">
-                                        <h3>{{$category->name}}</h3>
+                                        <h3 style="font-style: normal">{{$category->name}}</h3>
                                     </a>
                                     <article class="single-from-blog">
                                         <figure>
@@ -204,7 +204,7 @@
                                                         alt="{{$category->articles[0]->img_name}}"></a>
                                         </figure>
                                         <div class="blog-title">
-                                            <h2>
+                                            <h2 style="font-style: normal">
                                                 <a href="{{url('articles/' . $category->articles[0]->permalink)}}">{{$category->articles[0]->title}}</a>
                                             </h2>
                                         </div>
@@ -225,7 +225,7 @@
                                             </div>
                                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                                 <div class="blog-title">
-                                                    <h4 style="margin: 0; font-size: 15px;font-weight: bold">
+                                                    <h4 style="margin: 0; font-size: 15px;font-weight: bold; font-style: normal">
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
                                                     </h4>
                                                 </div>
@@ -237,9 +237,9 @@
                                         @endif
                                     @endforeach
                                     <div style="text-align: center!important;">
-                                        <a href="{{url($category->permalink)}}"
+                                        <a style="font-style: normal" href="{{url($category->permalink)}}"
                                            class="button button-default read-more"
-                                           data-text="Leer más"><span>Leer más</span></a>
+                                           data-text="Leer más"><span style="font-style: normal">Leer más</span></a>
                                     </div>
                                 </div>
                             @endif
@@ -256,5 +256,6 @@
                 </div>
             </div>
         </div>
+        <br><br><br><br><br>
     </section>
 @endsection
