@@ -39,13 +39,23 @@
 
     <!-- Facebook Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window,document,'script',
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq)return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '150955275576194');
         fbq('track', 'PageView');
@@ -79,33 +89,54 @@
 
     @yield('content')
 
+    {{--<footer class="footer-styles navbar-fixed-bottom">--}}
+    {{--<div style="height: 100px" class="container-fluid">--}}
+    {{--<div class="col-md-2 col-sm-12 col-xs-12">--}}
+    {{--<div class="follow-us">--}}
+    {{--<ul class="footer-list">--}}
+    {{--<li><a class="facebook" href="#"><span class="fa fa-thumbs-o-up"></span></a> <a--}}
+    {{--class="text-a-footer" href="#">Like en Facebook</a></li>--}}
+    {{--<li><a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}">--}}
+    {{--<span class="fa fa-youtube"></span>--}}
+    {{--</a>--}}
+    {{--<a class="text-a-footer" href="{{url('https://www.youtube.com/user/1984alrodri')}}">--}}
+    {{--Canal de Youtube</a>--}}
+    {{--</li>--}}
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--<div class="col-md-offset-8 col-md-2 col-sm-12 col-xs-12">--}}
+    {{--<div class="follow-us">--}}
+    {{--<ul class="footer-list">--}}
+    {{--<li>--}}
+    {{--<a class="text-a-footer" href="#">Resultados</a>--}}
+    {{--</li>--}}
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</footer>--}}
+
     <footer class="footer-styles navbar-fixed-bottom">
-        <div style="height: 100px" class="container-fluid">
-            <div class="col-md-2 col-sm-12 col-xs-12">
-                <div class="follow-us">
-                    <ul class="footer-list">
-                        <li><a class="facebook" href="#"><span class="fa fa-thumbs-o-up"></span></a> <a
-                                    class="text-a-footer" href="#">Like en Facebook</a></li>
-                        <li><a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}">
-                                <span class="fa fa-youtube"></span>
-                            </a>
-                            <a class="text-a-footer" href="{{url('https://www.youtube.com/user/1984alrodri')}}">
-                                Canal de Youtube</a>
-                        </li>
-                    </ul>
+        <div class="container-fluid">
+            <div class="follow-us">
+                <div class="col-md-2 col-xs-12 col-sm-12 footer-one">
+                    <a class="facebook" href="#"><span class="fa fa-thumbs-o-up"></span></a>
+                    <a class="text-a-footer" href="#">Like en Facebook</a>
                 </div>
-            </div>
-            <div class="col-md-offset-8 col-md-2 col-sm-12 col-xs-12">
-                <div class="follow-us">
-                    <ul class="footer-list">
-                        <li>
-                            <a class="text-a-footer" href="#">Resultados</a>
-                        </li>
-                    </ul>
+                <div class="col-md-2 col-xs-12 col-sm-12 footer-one">
+                    <a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}">
+                        <span class="fa fa-youtube"></span></a>
+                    <a class="text-a-footer" href="{{url('https://www.youtube.com/user/1984alrodri')}}">
+                        Canal de Youtube</a>
+                </div>
+                <div class="col-md-8 col-xs-12 col-sm-12 footer-two">
+                    <a class="text-a-footer" href="#">Resultados</a>
                 </div>
             </div>
         </div>
     </footer>
+
 </div>
 
 <!-- Scripts -->

@@ -402,7 +402,7 @@ Author URI : http://www.markups.io/
 }
 
 .footer-list li {
-    margin-bottom: 10px !important;
+    /*margin-bottom: 10px !important;*/
 }
 
 .footer-styles {
@@ -421,6 +421,23 @@ Author URI : http://www.markups.io/
     font-weight: 100;
     font-style: normal!important;
     display:inline!important;
+}
+
+.footer-one {
+    text-align: left;
+}
+
+.footer-two {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footer-one{
+        text-align: center;
+    }
+    .footer-two{
+        text-align: center;
+    }
 }
 /*.inner-styles {*/
 /*font-size: 14px!important;*/
@@ -6336,11 +6353,11 @@ img {
 }
 
 .follow-us {
-    border-top: 1px solid #d4d4d4;
+    /*border-top: 1px solid #d4d4d4;*/
     display: inline;
     float: left;
     padding-bottom: 10px;
-    padding-top: 24px;
+    padding-top: 10px;
     text-align: center;
     width: 100%;
 }
