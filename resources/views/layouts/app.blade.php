@@ -119,7 +119,7 @@
         <div class="container-fluid">
             <div class="follow-us">
                 <div class="col-md-6 col-xs-6 col-sm-6 footer-one">
-                    <div class="fb-like" data-href="https://www.facebook.com/palmariusdev/" data-layout="button"
+                    <div class="fb-like" data-href="https://business.facebook.com/Alonso-Rodriguez-672425609610138/?business_id=332688933904325&ref=bookmarks" data-layout="button"
                          data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6 footer-two">
@@ -128,9 +128,6 @@
                     <a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
                         <span class="fa fa-youtube"></span></a>
                 </div>
-                {{--<div class="col-md-8 col-xs-12 col-sm-12 footer-two">--}}
-                {{--<a class="text-a-footer" href="http://www.alonsorodriguez.org/actual-credit-repair-results-los-angeles.html" target="_blank">Resultados</a>--}}
-                {{--</div>--}}
             </div>
         </div>
     </footer>
