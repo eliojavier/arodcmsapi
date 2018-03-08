@@ -8,9 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Blog')</title>
+    <title>@yield('title', 'Como Reparar Credito Y Deudas De Tarjetas De Credito')</title>
     <meta name="description"
-          content="@yield('meta-description', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')"/>
+          content="@yield('meta-description', 'Como Reparar Credito Y Deudas De Tarjetas De Credito ')"/>
     <meta property="og:title" content="@yield('og-title', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')"/>
     <meta property="og:type" content="@yield('og-type', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')"/>
     <meta property="og:url" content="@yield('og-url', 'Shopware Agentur, Tutorials, Online Kurse & Hosting.')"/>
@@ -124,15 +124,15 @@
                     <a class="facebook" href="#"><span class="fa fa-thumbs-o-up"></span></a>
                     <a class="text-a-footer" href="#">Like en Facebook</a>
                 </div>
-                <div class="col-md-2 col-xs-12 col-sm-12 footer-one">
-                    <a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}">
+                <div class="col-md-2 col-xs-12 col-sm-12 footer-one  pull-right">
+                    <a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
                         <span class="fa fa-youtube"></span></a>
-                    <a class="text-a-footer" href="{{url('https://www.youtube.com/user/1984alrodri')}}">
-                        Canal de Youtube</a>
+                    <a class="text-a-footer" href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
+                        Videos De Alonso</a>
                 </div>
-                <div class="col-md-8 col-xs-12 col-sm-12 footer-two">
-                    <a class="text-a-footer" href="#">Resultados</a>
-                </div>
+                {{--<div class="col-md-8 col-xs-12 col-sm-12 footer-two">--}}
+                    {{--<a class="text-a-footer" href="http://www.alonsorodriguez.org/actual-credit-repair-results-los-angeles.html" target="_blank">Resultados</a>--}}
+                {{--</div>--}}
             </div>
         </div>
     </footer>
