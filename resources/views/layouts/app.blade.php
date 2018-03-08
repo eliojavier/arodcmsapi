@@ -62,19 +62,22 @@
     </script>
     <noscript>
         <img height="1" width="1"
-             src="https://www.facebook.com/tr?id=150955275576194&ev=PageView
-&noscript=1"/>
+             src="https://www.facebook.com/tr?id=150955275576194&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Facebook Pixel Code -->
 
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-styles">
-        <div class="container-fluid">
-            {{--<div class="navbar-header">--}}
-            {{--<a style="font-size: Raleway" class="navbar-brand" href="#">Blog</a>--}}
-            {{--</div>--}}
+    <nav class="navbar navbar-styles" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav custom-navbar">
                 <li><a href="/">Home</a></li>
                 <li><a href="/tarjetas">Tarjetas</a></li>
@@ -87,51 +90,46 @@
         </div>
     </nav>
 
-    @yield('content')
+    {{--<nav class="navbar navbar-default" role="navigation">--}}
+        {{--<div class="navbar-header">--}}
+            {{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--}}
+                {{--<span class="icon-bar"></span>--}}
+                {{--<span class="icon-bar"></span>--}}
+                {{--<span class="icon-bar"></span>--}}
+            {{--</button>--}}
+        {{--</div>--}}
+        {{--<a class="navbar-brand navbar-center" href="#">--}}
+            {{--<img src="http://placehold.it/100x40" alt="Logo Here">--}}
+        {{--</a>--}}
+        {{--<div class="navbar-collapse collapse">--}}
+            {{--<ul class="nav navbar-nav navbar-left">--}}
+                {{--<li><a href="#itemonelink">Item One</a></li>--}}
+                {{--<li><a href="#itemtwolink">Item Two</a></li>--}}
+            {{--</ul>--}}
+            {{--<ul class="nav navbar-nav navbar-right">--}}
+                {{--<li><a href="#signuplink">Signup</a></li>--}}
+                {{--<li><a href="#loginlink">Login</a></li>--}}
+            {{--</ul>--}}
+        {{--</div>--}}
+    {{--</nav>--}}
 
-    {{--<footer class="footer-styles navbar-fixed-bottom">--}}
-    {{--<div style="height: 100px" class="container-fluid">--}}
-    {{--<div class="col-md-2 col-sm-12 col-xs-12">--}}
-    {{--<div class="follow-us">--}}
-    {{--<ul class="footer-list">--}}
-    {{--<li><a class="facebook" href="#"><span class="fa fa-thumbs-o-up"></span></a> <a--}}
-    {{--class="text-a-footer" href="#">Like en Facebook</a></li>--}}
-    {{--<li><a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}">--}}
-    {{--<span class="fa fa-youtube"></span>--}}
-    {{--</a>--}}
-    {{--<a class="text-a-footer" href="{{url('https://www.youtube.com/user/1984alrodri')}}">--}}
-    {{--Canal de Youtube</a>--}}
-    {{--</li>--}}
-    {{--</ul>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="col-md-offset-8 col-md-2 col-sm-12 col-xs-12">--}}
-    {{--<div class="follow-us">--}}
-    {{--<ul class="footer-list">--}}
-    {{--<li>--}}
-    {{--<a class="text-a-footer" href="#">Resultados</a>--}}
-    {{--</li>--}}
-    {{--</ul>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</footer>--}}
+    @yield('content')
 
     <footer class="footer-styles navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="follow-us">
-                <div class="col-md-2 col-xs-12 col-sm-12 footer-one">
-                    <a class="facebook" href="#"><span class="fa fa-thumbs-o-up"></span></a>
-                    <a class="text-a-footer" href="#">Like en Facebook</a>
+                <div class="col-md-6 col-xs-6 col-sm-6 footer-one">
+                    <div class="fb-like" data-href="https://www.facebook.com/palmariusdev/" data-layout="button"
+                         data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
                 </div>
-                <div class="col-md-2 col-xs-12 col-sm-12 footer-one  pull-right">
-                    <a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
-                        <span class="fa fa-youtube"></span></a>
+                <div class="col-md-6 col-xs-6 col-sm-6 footer-two">
                     <a class="text-a-footer" href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
                         Videos De Alonso</a>
+                    <a class="youtube" href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
+                        <span class="fa fa-youtube"></span></a>
                 </div>
                 {{--<div class="col-md-8 col-xs-12 col-sm-12 footer-two">--}}
-                    {{--<a class="text-a-footer" href="http://www.alonsorodriguez.org/actual-credit-repair-results-los-angeles.html" target="_blank">Resultados</a>--}}
+                {{--<a class="text-a-footer" href="http://www.alonsorodriguez.org/actual-credit-repair-results-los-angeles.html" target="_blank">Resultados</a>--}}
                 {{--</div>--}}
             </div>
         </div>
@@ -139,7 +137,16 @@
 
 </div>
 
-<!-- Scripts -->
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.12';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row"
-         style="background-color: #f8f8f8; padding-top: 50px; padding-left: 50px; padding-right: 50px; padding-bottom: 0">
+         style="background-color: #f8f8f8; padding-top: 25px; padding-left: 0px; padding-right: 0px; padding-bottom: 0">
         <div class="col-md-offset-2 col-md-8">
             <a href="{{url('http://www.alonsorodriguez.org')}}" target="_blank">
                 <img style="width: 100%" src="{{asset('images/banneralonso.jpg')}}" alt="banner">

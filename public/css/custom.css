@@ -292,10 +292,10 @@ Author URI : http://www.markups.io/
     padding: 0 !important;
 }
 
-.container {
-    position: relative;
-    width: 50%;
-}
+/*.container {*/
+    /*position: relative;*/
+    /*width: 50%;*/
+/*}*/
 
 .images {
     display: block;
@@ -424,21 +424,50 @@ Author URI : http://www.markups.io/
 }
 
 .footer-one {
-    text-align: left;
+    text-align: right;
+    padding: 8px;
 }
 
 .footer-two {
-    text-align: right;
+    text-align: left;
+}
+
+.img-size {
+    object-fit: contain !important;
+    height: 375px;
 }
 
 @media (max-width: 768px) {
     .footer-one{
-        text-align: center;
+        text-align: left;
     }
     .footer-two{
-        text-align: center;
+        text-align: right;
+    }
+    .img-size {
+        height: 150px !important;
     }
 }
+
+@media (max-width: 430px) {
+    .text-a-footer{
+        font-size:10px!important;
+    }
+    .text-a-footer{
+        font-size: 10px!important;
+    }
+
+    #blog {
+        padding: 17px 0!important; ;
+    }
+}
+
+@media (max-width: 553px) {
+    .footer-one{
+        padding:6px;
+    }
+}
+
 /*.inner-styles {*/
 /*font-size: 14px!important;*/
 /*text-decoration: none!important;*/
@@ -13080,9 +13109,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-top: 8px;
     margin-right: 15px;
     margin-bottom: 8px;
-    background-color: transparent;
+    background-color: #738290;
     background-image: none;
-    border: 1px solid transparent;
+    border: 1px solid #738290;
     border-radius: 4px;
 }
 
@@ -13095,6 +13124,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     width: 22px;
     height: 2px;
     border-radius: 1px;
+    background: white;
 }
 
 .navbar-toggle .icon-bar + .icon-bar {
@@ -13141,6 +13171,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-nav .open .dropdown-menu > li > a:focus {
         background-image: none;
+    }
+
+    .custom-navbar {
+        display: grid!important;
+        text-align: right!important;
     }
 }
 

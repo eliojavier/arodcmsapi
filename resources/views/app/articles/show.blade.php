@@ -28,7 +28,7 @@
                                                 en <span class="blog-date">{{$article->created_at}}</span></p>
                                         </div>
                                         <figure>
-                                            <a><img style="height: 375px; object-fit: contain"
+                                            <a><img class="img-size"
                                                     alt="{{$article->img_name}}" src="{{$article->img_url}}"></a>
                                         </figure>
                                         <div class="blog-details-content">
