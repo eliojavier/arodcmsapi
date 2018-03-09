@@ -137,7 +137,9 @@
                                     </a>
                                     <article class="single-from-blog">
                                         <figure>
-                                            <a href="{{url('articles/' . $category->articles[0]->permalink)}}"><img
+                                            <a href="{{url('articles/' . $category->articles[0]->permalink)}}">
+                                                <img
+                                                        class="home-images"
                                                         src="{{$category->articles[0]->img_url}}"
                                                         alt="{{$category->articles[0]->img_name}}"></a>
                                         </figure>
@@ -156,7 +158,7 @@
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                 <figure>
                                                     <a href="{{url('articles/' . $article->permalink)}}"><img
-                                                                style="width: 100%"
+                                                                class="little-images"
                                                                 src="{{$article->img_url}}"
                                                                 alt="{{$article->img_url}}"></a>
                                                 </figure>
@@ -200,6 +202,7 @@
                                     <article class="single-from-blog">
                                         <figure>
                                             <a href="{{url('articles/' . $category->articles[0]->permalink)}}"><img
+                                                        class="home-images"
                                                         src="{{$category->articles[0]->img_url}}"
                                                         alt="{{$category->articles[0]->img_name}}"></a>
                                         </figure>
@@ -218,7 +221,7 @@
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                                 <figure>
                                                     <a href="{{url('articles/' . $article->permalink)}}"><img
-                                                                style="width: 100%"
+                                                                class="little-images"
                                                                 src="{{$article->img_url}}"
                                                                 alt="{{$article->img_url}}"></a>
                                                 </figure>

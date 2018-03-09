@@ -468,6 +468,18 @@ Author URI : http://www.markups.io/
     }
 }
 
+.home-images {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.little-images {
+    height: 55px;
+    width: 100%;
+    object-fit: cover;
+}
+
 /*.inner-styles {*/
 /*font-size: 14px!important;*/
 /*text-decoration: none!important;*/
