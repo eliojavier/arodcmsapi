@@ -487,6 +487,12 @@ Author URI : http://www.markups.io/
     object-fit: cover!important;
 }
 
+.related-images {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
 
 /*.inner-styles {*/
 /*font-size: 14px!important;*/

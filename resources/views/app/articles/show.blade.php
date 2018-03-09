@@ -44,7 +44,7 @@
                                             <article class="single-from-blog">
                                                 <figure>
                                                     <a href="{{url('articles/' . $related_article->permalink)}}"><img
-                                                                src="{{$related_article->img_url}}" class="img-size"
+                                                                src="{{$related_article->img_url}}" class="related-images"
                                                                 alt="{{$related_article->img_name}}"></a>
                                                 </figure>
                                                 <div class="blog-title">
