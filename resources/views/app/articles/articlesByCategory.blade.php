@@ -24,7 +24,7 @@
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                 <figure>
                                                     <a href="{{url('articles/' . $article->permalink)}}"><img alt="img"
-                                                                                                              style="object-fit: cover"
+                                                                                                              class="list-images"
                                                                                                               src="{{$article->img_url}}"></a>
                                                 </figure>
                                             </div>
