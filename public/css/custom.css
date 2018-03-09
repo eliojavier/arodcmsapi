@@ -433,8 +433,9 @@ Author URI : http://www.markups.io/
 }
 
 .img-size {
-    object-fit: contain !important;
-    height: 375px;
+    object-fit: cover !important;
+    height: 400px;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -445,7 +446,7 @@ Author URI : http://www.markups.io/
         text-align: right;
     }
     .img-size {
-        height: 150px !important;
+        height: 250px !important;
     }
 }
 
@@ -479,6 +480,13 @@ Author URI : http://www.markups.io/
     width: 100%;
     object-fit: cover;
 }
+
+.list-images {
+    height: 215px!important;
+    width: 100%!important;
+    object-fit: cover!important;
+}
+
 
 /*.inner-styles {*/
 /*font-size: 14px!important;*/

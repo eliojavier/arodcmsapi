@@ -155,7 +155,7 @@
                                     </article>
                                     @foreach($category->articles as $article)
                                         @if (!$loop->first)
-                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                                 <figure>
                                                     <a href="{{url('articles/' . $article->permalink)}}"><img
                                                                 class="little-images"
@@ -163,7 +163,7 @@
                                                                 alt="{{$article->img_url}}"></a>
                                                 </figure>
                                             </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                                 <div class="blog-title">
                                                     <h4 style="margin: 0; font-size: 15px;font-weight: bold; font-style: normal">
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
@@ -218,7 +218,7 @@
                                     </article>
                                     @foreach($category->articles as $article)
                                         @if (!$loop->first)
-                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                                 <figure>
                                                     <a href="{{url('articles/' . $article->permalink)}}"><img
                                                                 class="little-images"
@@ -226,7 +226,7 @@
                                                                 alt="{{$article->img_url}}"></a>
                                                 </figure>
                                             </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                                 <div class="blog-title">
                                                     <h4 style="margin: 0; font-size: 15px;font-weight: bold; font-style: normal">
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
