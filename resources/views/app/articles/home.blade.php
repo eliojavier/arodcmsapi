@@ -13,13 +13,13 @@
                              alt="{{$header_articles[0]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
-                                <a href="{{url($header_articles[0]->permalink)}}"><i class="fa fa-search"></i></a>
+                                <a href="{{url($header_articles[0]->permalink)}}"></a>
                             </div>
                         </div>
                         <div class="text">
                             <a href="{{url('articles/' . $header_articles[0]->articles[0]->permalink)}}"><h4
                                         style="cursor: pointer;background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
-                                    {{$header_articles[0]->name}}
+                                    {{$header_articles[0]->articles[0]->title}}
                                 </h4></a>
                         </div>
                     </div>
@@ -30,13 +30,13 @@
                              alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
-                                <a href="{{url($header_articles[1]->permalink)}}"><i class="fa fa-search"></i></a>
+                                <a href="{{url($header_articles[1]->permalink)}}"></a>
                             </div>
                         </div>
                         <div class="text">
                             <a href="{{url('articles/' . $header_articles[1]->articles[0]->permalink)}}"><h4
                                         style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
-                                    {{$header_articles[1]->name}}
+                                    {{$header_articles[1]->articles[0]->title}}
                                 </h4></a>
                         </div>
                     </div>
@@ -49,13 +49,13 @@
                              alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
-                                <a href="{{url($header_articles[2]->permalink)}}"><i class="fa fa-search"></i></a>
+                                <a href="{{url($header_articles[2]->permalink)}}"></a>
                             </div>
                         </div>
                         <div class="text">
                             <a href="{{url('articles/' . $header_articles[2]->articles[0]->permalink)}}"><h4
                                         style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
-                                    {{$header_articles[2]->name}}
+                                    {{$header_articles[2]->articles[0]->title}}
                                 </h4></a>
                         </div>
                     </div>
@@ -70,13 +70,13 @@
                              alt="{{$header_articles[3]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
-                                <a href="{{url($header_articles[3]->permalink)}}"><i class="fa fa-search"></i></a>
+                                <a href="{{url($header_articles[3]->permalink)}}"></a>
                             </div>
                         </div>
                         <div class="text">
                             <a href="{{url('articles/' . $header_articles[0]->articles[0]->permalink)}}"><h4
                                         style="cursor: pointer;background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
-                                    {{$header_articles[3]->name}}
+                                    {{$header_articles[3]->articles[0]->title}}
                                 </h4></a>
                         </div>
                     </div>
@@ -87,13 +87,13 @@
                              alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
-                                <a href="{{url($header_articles[4]->permalink)}}"><i class="fa fa-search"></i></a>
+                                <a href="{{url($header_articles[4]->permalink)}}"></a>
                             </div>
                         </div>
                         <div class="text">
                             <a href="{{url('articles/' . $header_articles[4]->articles[0]->permalink)}}"><h4
                                         style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
-                                    {{$header_articles[4]->name}}
+                                    {{$header_articles[4]->articles[0]->title}}
                                 </h4></a>
                         </div>
                     </div>
@@ -106,13 +106,13 @@
                              alt="{{$header_articles[1]->articles[0]->img_name}}">
                         <div class="overlay">
                             <div class="overlay-text">
-                                <a href="{{url($header_articles[5]->permalink)}}"><i class="fa fa-search"></i></a>
+                                <a href="{{url($header_articles[5]->permalink)}}"></a>
                             </div>
                         </div>
                         <div class="text">
                             <a href="{{url('articles/' . $header_articles[5]->articles[0]->permalink)}}"><h4
                                         style="background: rgba(0, 0, 0, 0.7); width: 100%; margin-top: -50px; padding: 15px">
-                                    {{$header_articles[5]->name}}
+                                    {{$header_articles[5]->articles[0]->title}}
                                 </h4></a>
                         </div>
                     </div>
