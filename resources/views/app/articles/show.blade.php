@@ -27,24 +27,31 @@
                                             <p>Publicado por <a class="blog-admin">{{$article->user->name}}</a>
                                                 en <span class="blog-date">{{$article->created_at}}</span></p>
                                         </div>
-                                        <figure>
-                                            <a><img class="img-size"
-                                                    alt="{{$article->img_name}}" src="{{$article->img_url}}"></a>
-                                        </figure>
+                                        <div class="col-md-offset-3 col-md-6">
+                                            <figure>
+                                                <a><img class="img-size"
+                                                        alt="{{$article->img_name}}" src="{{$article->img_url}}"></a>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-12">
                                         <div class="blog-details-content">
                                             {!!$article->body!!}
                                         </div>
-                                        <p>Categoría: <a href="{{url('/'.$article->categories[0]->permalink)}}">{{$article->categories[0]->name}}</a></p>
+                                        <p>Categoría: <a
+                                                    href="{{url('/'.$article->categories[0]->permalink)}}">{{$article->categories[0]->name}}</a>
+                                        </p>
+                                        </div>
                                     </article>
 
-                                        <h2 style="margin-left: 25px">Artículos Relacionados:</h2>
+                                    <h2 style="margin-left: 25px">Artículos Relacionados:</h2>
                                     <br>
                                     @foreach($related_articles->articles as $related_article)
                                         <div class="col-md-4">
                                             <article class="single-from-blog">
                                                 <figure>
                                                     <a href="{{url('articles/' . $related_article->permalink)}}"><img
-                                                                src="{{$related_article->img_url}}" class="related-images"
+                                                                src="{{$related_article->img_url}}"
+                                                                class="related-images"
                                                                 alt="{{$related_article->img_name}}"></a>
                                                 </figure>
                                                 <div class="blog-title">
@@ -54,7 +61,7 @@
                                                 </div>
                                                 <div class="inner-styles">
                                                     <p>{!!substr(html_entity_decode($related_article->body), 0, 150)!!}
-                                                    ...</p>
+                                                        ...</p>
                                                 </div>
 
                                             </article>
@@ -69,7 +76,8 @@
                             </div>
                             <div class="col-md-3">
                                 <a href="{{url('https://www.youtube.com/user/1984alrodri')}}" target="_blank">
-                                    <img style="width: 100%" src="{{asset('images/bannerHorizontal.jpeg')}}" alt="banner">
+                                    <img style="width: 100%" src="{{asset('images/bannerHorizontal.jpeg')}}"
+                                         alt="banner">
                                 </a>
                             </div>
                         </div>

@@ -21,14 +21,14 @@
                                     <!-- Start single blog post -->
                                     @foreach($articles as $article)
                                         <article class="single-from-blog">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                 <figure>
                                                     <a href="{{url('articles/' . $article->permalink)}}"><img alt="img"
                                                                                                               class="list-images"
                                                                                                               src="{{$article->img_url}}"></a>
                                                 </figure>
                                             </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                 <div class="blog-title">
                                                     <h2 style="font-style: normal!important;">
                                                         <a href="{{url('articles/' . $article->permalink)}}">{{$article->title}}</a>
