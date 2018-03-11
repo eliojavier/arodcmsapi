@@ -357,13 +357,17 @@ Author URI : http://www.markups.io/
     }
 }
 
-.inner-styles p, .inner-styles h1, .inner-styles h2, .inner-styles h3, .inner-styles h4, .inner-styles h5, .inner-styles h6, .inner-styles strong {
+.inner-styles p, .inner-styles h1, .inner-styles h2, .inner-styles h3, .inner-styles h4, .inner-styles h5, .inner-styles h6, .inner-styles strong, .inner-styles span, .inner-styles em, .inner-styles {
     font-size: 14px !important;
     text-decoration: none !important;
     font-weight: 100 !important;
     font-family: Helvetica, sans-serif !important;
     color: #333333 !important;
     font-style: normal !important;
+}
+
+.inner-styles {
+    margin-bottom: 10px;
 }
 
 .navbar-styles {
@@ -488,8 +492,8 @@ Author URI : http://www.markups.io/
 }
 
 .related-images {
-    height: 180px;
-    width: 81% !important;
+    height: 180px!important;
+    width: 81%!important;;
     object-fit: cover;
 }
 

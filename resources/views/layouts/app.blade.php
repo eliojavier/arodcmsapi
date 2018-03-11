@@ -61,10 +61,17 @@
         fbq('track', 'PageView');
     </script>
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-101401538-1', 'auto');
         ga('send', 'pageview');
@@ -101,26 +108,26 @@
     </nav>
 
     {{--<nav class="navbar navbar-default" role="navigation">--}}
-        {{--<div class="navbar-header">--}}
-            {{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--}}
-                {{--<span class="icon-bar"></span>--}}
-                {{--<span class="icon-bar"></span>--}}
-                {{--<span class="icon-bar"></span>--}}
-            {{--</button>--}}
-        {{--</div>--}}
-        {{--<a class="navbar-brand navbar-center" href="#">--}}
-            {{--<img src="http://placehold.it/100x40" alt="Logo Here">--}}
-        {{--</a>--}}
-        {{--<div class="navbar-collapse collapse">--}}
-            {{--<ul class="nav navbar-nav navbar-left">--}}
-                {{--<li><a href="#itemonelink">Item One</a></li>--}}
-                {{--<li><a href="#itemtwolink">Item Two</a></li>--}}
-            {{--</ul>--}}
-            {{--<ul class="nav navbar-nav navbar-right">--}}
-                {{--<li><a href="#signuplink">Signup</a></li>--}}
-                {{--<li><a href="#loginlink">Login</a></li>--}}
-            {{--</ul>--}}
-        {{--</div>--}}
+    {{--<div class="navbar-header">--}}
+    {{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--}}
+    {{--<span class="icon-bar"></span>--}}
+    {{--<span class="icon-bar"></span>--}}
+    {{--<span class="icon-bar"></span>--}}
+    {{--</button>--}}
+    {{--</div>--}}
+    {{--<a class="navbar-brand navbar-center" href="#">--}}
+    {{--<img src="http://placehold.it/100x40" alt="Logo Here">--}}
+    {{--</a>--}}
+    {{--<div class="navbar-collapse collapse">--}}
+    {{--<ul class="nav navbar-nav navbar-left">--}}
+    {{--<li><a href="#itemonelink">Item One</a></li>--}}
+    {{--<li><a href="#itemtwolink">Item Two</a></li>--}}
+    {{--</ul>--}}
+    {{--<ul class="nav navbar-nav navbar-right">--}}
+    {{--<li><a href="#signuplink">Signup</a></li>--}}
+    {{--<li><a href="#loginlink">Login</a></li>--}}
+    {{--</ul>--}}
+    {{--</div>--}}
     {{--</nav>--}}
 
     @yield('content')
@@ -129,7 +136,9 @@
         <div class="container-fluid">
             <div class="follow-us">
                 <div class="col-md-6 col-xs-6 col-sm-6 footer-one">
-                    <div class="fb-like" data-href="https://business.facebook.com/Alonso-Rodriguez-672425609610138/?business_id=332688933904325&ref=bookmarks" data-layout="button"
+                    <div class="fb-like"
+                         data-href="https://business.facebook.com/Alonso-Rodriguez-672425609610138/?business_id=332688933904325&ref=bookmarks"
+                         data-layout="button"
                          data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6 footer-two">
@@ -155,5 +164,32 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="{{ asset('js/app.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+        var body = document.getElementsByClassName('hidden-body');
+        var article = document.getElementsByClassName('article-body');
+        console.log (body);
+        for (var i = 0; i < body.length; ++i) {
+            var str = body[i].innerText;
+            var res = str.substring(0, 90);
+            article[i].innerHTML = res + '...';
+        }
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        var body = document.getElementsByClassName('hidden-list-body');
+        var article = document.getElementsByClassName('list-article-body');
+        console.log (body);
+        for (var i = 0; i < body.length; ++i) {
+            var str = body[i].innerText;
+            var res = str.substring(0, 200);
+            article[i].innerHTML = res + '...';
+        }
+    });
+</script>
+
 </body>
 </html>
