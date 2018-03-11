@@ -149,8 +149,9 @@
                                             </h2>
                                         </div>
                                         <div class="inner-styles">
-                                            <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}
-                                                ...</p>
+                                            <div hidden class="hidden-body">{!! $category->articles[0]->body !!}</div>
+                                            <div class="article-body"></div>
+                                            {{--{!! \Illuminate\Support\Str::words($category->articles[0]->body, 15)!!}--}}
                                         </div>
                                     </article>
                                     @foreach($category->articles as $article)
@@ -170,9 +171,8 @@
                                                     </h4>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    {!! \Illuminate\Support\Str::words($article->body, 15)!!}
-                                                    {{--<p>{!!substr($article->body, 0, 90)!!}--}}
-                                                        {{--...</p>--}}
+                                                    <div hidden class="hidden-body">{!! $article->body !!}</div>
+                                                    <div class="article-body"></div>
                                                 </div>
                                             </div>
                                         @endif
@@ -212,8 +212,8 @@
                                             </h2>
                                         </div>
                                         <div class="inner-styles">
-                                            <p>{!!substr(html_entity_decode($category->articles[0]->body), 0, 150)!!}
-                                                ...</p>
+                                            <div hidden class="hidden-body">{!! $category->articles[0]->body !!}</div>
+                                            <div class="article-body"></div>
                                         </div>
                                     </article>
                                     @foreach($category->articles as $article)
@@ -233,8 +233,8 @@
                                                     </h4>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    <p>{!!substr(html_entity_decode($article->body), 0, 90)!!}
-                                                        ...</p>
+                                                    <div hidden class="hidden-body">{!! $article->body !!}</div>
+                                                    <div class="article-body"></div>
                                                 </div>
                                             </div>
                                         @endif

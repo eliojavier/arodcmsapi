@@ -45,9 +45,13 @@
 
                                     <h2 style="margin-left: 25px">Artículos Relacionados:</h2>
                                     <br>
+                                    @php
+                                        $iteration = 1;
+                                    @endphp
                                     @foreach($related_articles->articles as $related_article)
+
                                         <div class="col-md-4">
-                                            <article class="single-from-blog">
+                                            <article class="single-from-blog" style="margin-bottom: 20px">
                                                 <figure>
                                                     <a href="{{url('articles/' . $related_article->permalink)}}"><img
                                                                 src="{{$related_article->img_url}}"
@@ -60,17 +64,25 @@
                                                     </h2>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    <p>{!!substr(html_entity_decode($related_article->body), 0, 150)!!}
-                                                        ...</p>
+                                                    {{--<p>{!! \Illuminate\Support\Str::words($related_article->body, 10)!!}--}}
+                                                        {{--...</p>--}}
+                                                    {{--<div hidden id="hidden-body-{{$iteration}}">{!!$related_article->body!!}</div>--}}
+                                                    {{--<div id="article-body-{{$iteration}}"></div>--}}
+
+                                                    <div hidden class="hidden-body">{!!$related_article->body!!}</div>
+                                                    <div class="article-body"></div>
                                                 </div>
 
                                             </article>
                                             <div style="text-align: center!important;">
-                                                <a href="{{url('articles/' . $related_article->permalink)}}"
-                                                   class="button button-default read-more"
-                                                   data-text="Leer más"><span>Leer más</span></a>
+                                                {{--<a href="{{url('articles/' . $related_article->permalink)}}"--}}
+                                                   {{--class="button button-default read-more"--}}
+                                                   {{--data-text="Leer más"><span>Leer más</span></a>--}}
                                             </div>
                                         </div>
+                                        @php
+                                            $iteration = $iteration+1;
+                                        @endphp
                                     @endforeach
                                 </div>
                             </div>
@@ -88,6 +100,5 @@
         <br><br><br><br><br>
     </section>
     <!-- End blog section -->
-
 
 @endsection

@@ -357,7 +357,7 @@ Author URI : http://www.markups.io/
     }
 }
 
-.inner-styles p, .inner-styles h1, .inner-styles h2, .inner-styles h3, .inner-styles h4, .inner-styles h5, .inner-styles h6, .inner-styles strong {
+.inner-styles p, .inner-styles h1, .inner-styles h2, .inner-styles h3, .inner-styles h4, .inner-styles h5, .inner-styles h6, .inner-styles strong, .inner-styles span, .inner-styles em, .inner-styles {
     font-size: 14px !important;
     text-decoration: none !important;
     font-weight: 100 !important;
@@ -488,8 +488,8 @@ Author URI : http://www.markups.io/
 }
 
 .related-images {
-    height: 220px;
-    width: 100%;
+    height: 180px!important;
+    width: 81%!important;;
     object-fit: cover;
 }
 
