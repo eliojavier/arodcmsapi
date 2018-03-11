@@ -366,6 +366,10 @@ Author URI : http://www.markups.io/
     font-style: normal !important;
 }
 
+.inner-styles {
+    margin-bottom: 10px;
+}
+
 .navbar-styles {
     background: linear-gradient(#5f6469, #51575c);
     border-color: #202020;

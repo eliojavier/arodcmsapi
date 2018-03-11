@@ -165,16 +165,6 @@
 
 <script src="{{ asset('js/app.js') }}"></script>
 
-{{--<script>--}}
-    {{--$(document).ready(function () {--}}
-        {{--for (var i = 1; i <= 3; i++) {--}}
-            {{--var str = $('#hidden-body-' + i).text();--}}
-            {{--var res = str.substring(0, 90);--}}
-            {{--$('#article-body-' + i).html(res).innerText;--}}
-        {{--}--}}
-    {{--});--}}
-{{--</script>--}}
-
 <script>
     $(document).ready(function () {
         var body = document.getElementsByClassName('hidden-body');
