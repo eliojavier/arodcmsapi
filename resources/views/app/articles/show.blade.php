@@ -65,11 +65,11 @@
                                                 </div>
 
                                             </article>
-                                            <div style="text-align: center!important;">
-                                                <a href="{{url('articles/' . $related_article->permalink)}}"
-                                                   class="button button-default read-more"
-                                                   data-text="Leer más"><span>Leer más</span></a>
-                                            </div>
+                                            {{--<div style="text-align: center!important;">--}}
+                                                {{--<a href="{{url('articles/' . $related_article->permalink)}}"--}}
+                                                   {{--class="button button-default read-more"--}}
+                                                   {{--data-text="Leer más"><span>Leer más</span></a>--}}
+                                            {{--</div>--}}
                                         </div>
                                     @endforeach
                                 </div>

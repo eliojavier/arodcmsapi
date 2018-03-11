@@ -488,8 +488,8 @@ Author URI : http://www.markups.io/
 }
 
 .related-images {
-    height: 220px;
-    width: 100%;
+    height: 180px;
+    width: 81% !important;
     object-fit: cover;
 }
 
