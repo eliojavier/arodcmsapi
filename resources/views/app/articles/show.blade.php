@@ -64,11 +64,6 @@
                                                     </h2>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    {{--<p>{!! \Illuminate\Support\Str::words($related_article->body, 10)!!}--}}
-                                                        {{--...</p>--}}
-                                                    {{--<div hidden id="hidden-body-{{$iteration}}">{!!$related_article->body!!}</div>--}}
-                                                    {{--<div id="article-body-{{$iteration}}"></div>--}}
-
                                                     <div hidden class="hidden-body">{!!$related_article->body!!}</div>
                                                     <div class="article-body"></div>
                                                 </div>

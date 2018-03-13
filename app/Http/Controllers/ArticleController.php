@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Error;
 use App\User;
+use Exception;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
@@ -19,8 +22,18 @@ class ArticleController extends Controller
         if ($exists = $user->roles->contains('name', 'superadmin') ||
             $exists = $user->roles->contains('name', 'editor')) {
 
-            $articles = Article::active()->get();
-            return response()->json(['articles' => $articles->load('user', 'categories')]);
+            $articles = Article::where('status', '!=', 'inactive')->get();
+
+            foreach ($articles as $article) {
+                $user_id = $article->user->id;
+                $total = Article::where('user_id', $user_id)->count();
+                $article->total = $total;
+            }
+
+            $total_articles = Article::where('status', '!=', 'inactive')->count();
+
+            return response()->json(['articles' => $articles->load('user', 'categories'),
+                                    'total_articles' => $total_articles]);
         } else if ($exists = $user->roles->contains('name', 'writer')) {
             return response()->json(['articles' => $user->articles->load('user', 'categories')]);
         }
@@ -32,25 +45,38 @@ class ArticleController extends Controller
     {
         $user = User::findUserByToken($request->user()->id);
 
-        $article = new Article();
-        $article->title = $request->title;
-        $article->permalink = $request->permalink != null ? $request->permalink : str_slug($request->title);
-        $article->body = $request->body;
-        $article->seo_title = $request->seo_title;
-        $article->seo_description = $request->seo_description;
-        $article->keywords = $request->keywords;
-        $article->status = 'preview';
-        $article->user_id = $user->id;
-        $article->save();
-        $article->categories()->sync($request->category);
+        try {
+            $article = new Article();
+            $article->title = $request->title;
+            $article->permalink = $request->permalink != null ? $request->permalink : str_slug($request->title);
+            $article->body = $request->body;
+            $article->seo_title = $request->seo_title;
+            $article->seo_description = $request->seo_description;
+            $article->keywords = $request->keywords;
+            $article->status = 'preview';
+            $article->user_id = $user->id;
+            $article->save();
+            $article->categories()->sync($request->category);
 
-        SitemapGenerator::create('http://blog.alonsorodriguez.org')
-                            ->getSitemap()
-                            ->writeToFile('sitemap.xml');
+            SitemapGenerator::create('http://blog.alonsorodriguez.org')
+                ->getSitemap()
+                ->writeToFile('sitemap.xml');
 
-        return response()->json(['success' => true,
-                                'msg' => 'article stored',
-                                'id' => $article->id]);
+            return response()->json(['success' => true,
+                'msg' => 'article stored',
+                'id' => $article->id]);
+        }
+        catch(Exception $exception) {
+            $error = new Error();
+            $error->user_id = $user->id;
+            $error->user_name = $user->name;
+            $error->message = $exception->getMessage();
+            $error->exception = $exception;
+            $error->save();
+            return response()->json(['success' => false,
+                'msg' => $exception->getMessage()])->setStatusCode(500);
+        }
+
     }
 
     public function storeImage(Request $request, Article $article)
@@ -150,6 +176,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->status = 'inactive';
+        $article->title = $article->title . '_' . str_random(10);
         $article->update();
 
         return response()->json(['success' => true, 'msg' => 'article destroyed']);
