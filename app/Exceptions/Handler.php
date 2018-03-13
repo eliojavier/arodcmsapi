@@ -2,6 +2,8 @@
 
 namespace App\Exceptions;
 
+use App\Error;
+use App\User;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -37,6 +39,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+
         parent::report($exception);
     }
 
@@ -49,8 +52,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-//        return response()->json(['error' => $exception]);
-
         return parent::render($request, $exception);
     }
 }

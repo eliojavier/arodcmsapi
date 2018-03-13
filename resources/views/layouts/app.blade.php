@@ -106,7 +106,7 @@
             </ul>
         </div>
     </nav>
-    
+
     @yield('content')
 
     <footer class="footer-styles navbar-fixed-bottom">
@@ -141,5 +141,6 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

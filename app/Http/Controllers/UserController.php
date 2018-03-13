@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -13,6 +14,11 @@ class UserController extends Controller
     public function index()
     {
         $users = User::active()->get();
+
+        foreach ($users as $user) {
+            $total = Article::where('user_id', $user->id)->count();
+            $user->total = $total;
+        }
 
         return response()->json(['users' => $users]);
     }

@@ -33,6 +33,11 @@ class Article extends Model
         return $query->where('status', 'active');
     }
 
+    public function scopePreview($query)
+    {
+        return $query->where('status', 'preview');
+    }
+
     public function scopeLatestFive($query)
     {
         return $query->orderBy('created_at', 'desc')->limit(5);
