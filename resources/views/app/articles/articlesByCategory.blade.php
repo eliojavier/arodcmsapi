@@ -40,8 +40,7 @@
                                                                 class="blog-date">{{$article->created_at}}</span></p>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    <div hidden class="hidden-list-body">{!! $article->body !!}</div>
-                                                    <div class="list-article-body"></div>
+                                                    {!! \Illuminate\Support\Str::words(strip_tags($article->body), 45)!!}
                                                 </div>
                                                 <div class="inner-styles">
                                                     <p><a style="color: #37c6f5 !important"

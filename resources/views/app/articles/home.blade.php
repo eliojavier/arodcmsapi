@@ -149,9 +149,11 @@
                                             </h2>
                                         </div>
                                         <div class="inner-styles">
-                                            <div hidden class="hidden-body">{!! $category->articles[0]->body !!}</div>
-                                            <div class="article-body"></div>
-                                            {{--{!! \Illuminate\Support\Str::words($category->articles[0]->body, 15)!!}--}}
+                                            {{--<div hidden class="hidden-body">{!! $category->articles[0]->body !!}</div>--}}
+                                            {{--<div class="article-body"></div>--}}
+                                            {{--<div>{!! substr(strip_tags($category->articles[0]->body), 0, 90)!!}</div>--}}
+                                            {{--<div>{!! strip_tags($category->articles[0]->body)!!}</div>--}}
+                                            {!! \Illuminate\Support\Str::words(strip_tags($category->articles[0]->body), 15)!!}
                                         </div>
                                     </article>
                                     @foreach($category->articles as $article)
@@ -171,8 +173,9 @@
                                                     </h4>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    <div hidden class="hidden-body">{!! $article->body !!}</div>
-                                                    <div class="article-body"></div>
+                                                    {{--<div hidden class="hidden-body">{!! $article->body !!}</div>--}}
+                                                    {{--<div class="article-body"></div>--}}
+                                                    {!! \Illuminate\Support\Str::words(strip_tags($article->body), 15)!!}
                                                 </div>
                                             </div>
                                         @endif
@@ -212,8 +215,9 @@
                                             </h2>
                                         </div>
                                         <div class="inner-styles">
-                                            <div hidden class="hidden-body">{!! $category->articles[0]->body !!}</div>
-                                            <div class="article-body"></div>
+                                            {{--<div hidden class="hidden-body">{!! $category->articles[0]->body !!}</div>--}}
+                                            {{--<div class="article-body"></div>--}}
+                                            {!! \Illuminate\Support\Str::words(strip_tags($category->articles[0]->body), 15)!!}
                                         </div>
                                     </article>
                                     @foreach($category->articles as $article)
@@ -233,8 +237,9 @@
                                                     </h4>
                                                 </div>
                                                 <div class="inner-styles">
-                                                    <div hidden class="hidden-body">{!! $article->body !!}</div>
-                                                    <div class="article-body"></div>
+                                                    {{--<div hidden class="hidden-body">{!! $article->body !!}</div>--}}
+                                                    {{--<div class="article-body"></div>--}}
+                                                    {!! \Illuminate\Support\Str::words(strip_tags($article->body), 15)!!}
                                                 </div>
                                             </div>
                                         @endif

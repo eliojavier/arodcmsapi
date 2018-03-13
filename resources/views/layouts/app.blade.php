@@ -106,30 +106,7 @@
             </ul>
         </div>
     </nav>
-
-    {{--<nav class="navbar navbar-default" role="navigation">--}}
-    {{--<div class="navbar-header">--}}
-    {{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--}}
-    {{--<span class="icon-bar"></span>--}}
-    {{--<span class="icon-bar"></span>--}}
-    {{--<span class="icon-bar"></span>--}}
-    {{--</button>--}}
-    {{--</div>--}}
-    {{--<a class="navbar-brand navbar-center" href="#">--}}
-    {{--<img src="http://placehold.it/100x40" alt="Logo Here">--}}
-    {{--</a>--}}
-    {{--<div class="navbar-collapse collapse">--}}
-    {{--<ul class="nav navbar-nav navbar-left">--}}
-    {{--<li><a href="#itemonelink">Item One</a></li>--}}
-    {{--<li><a href="#itemtwolink">Item Two</a></li>--}}
-    {{--</ul>--}}
-    {{--<ul class="nav navbar-nav navbar-right">--}}
-    {{--<li><a href="#signuplink">Signup</a></li>--}}
-    {{--<li><a href="#loginlink">Login</a></li>--}}
-    {{--</ul>--}}
-    {{--</div>--}}
-    {{--</nav>--}}
-
+    
     @yield('content')
 
     <footer class="footer-styles navbar-fixed-bottom">
@@ -164,32 +141,5 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="{{ asset('js/app.js') }}"></script>
-
-<script>
-    $(document).ready(function () {
-        var body = document.getElementsByClassName('hidden-body');
-        var article = document.getElementsByClassName('article-body');
-        console.log (body);
-        for (var i = 0; i < body.length; ++i) {
-            var str = body[i].innerText;
-            var res = str.substring(0, 90);
-            article[i].innerHTML = res + '...';
-        }
-    });
-</script>
-
-<script>
-    $(document).ready(function () {
-        var body = document.getElementsByClassName('hidden-list-body');
-        var article = document.getElementsByClassName('list-article-body');
-        console.log (body);
-        for (var i = 0; i < body.length; ++i) {
-            var str = body[i].innerText;
-            var res = str.substring(0, 200);
-            article[i].innerHTML = res + '...';
-        }
-    });
-</script>
-
 </body>
 </html>
