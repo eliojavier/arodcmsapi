@@ -16,7 +16,7 @@ class UserController extends Controller
         $users = User::active()->get();
 
         foreach ($users as $user) {
-            $total = Article::where('user_id', $user->id)->count();
+            $total = Article::where('user_id', $user->id)->where('status', '!=', 'inactive')->count();
             $user->total = $total;
         }
 

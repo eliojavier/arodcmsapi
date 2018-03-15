@@ -68,6 +68,11 @@ class WebArticleController extends Controller
     public function articlesByCategory($category)
     {
         $cat = Category::wherePermalink($category)->first();
+
+        if ($cat == null) {
+            return redirect('/');
+        }
+
         $articles = Article::whereHas('categories', function ($q) use($category) {
             $q->wherePermalink($category);
         })->latest()->active()->paginate(10);
